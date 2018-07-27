@@ -11,9 +11,17 @@ import poly.Poly;
 public final class IntSet {
 
 	private int set[]; // a set is initialized
+    private int universalSet[]; // a universal set of 1000 element is initialized
+	
 
-	public IntSet (int[] set) // a perameterized constructor is initialized
+    
+	public IntSet (int[] set) // a parameterized constructor is initialized
 	{
+		universalSet = new int[1000];
+		for (int i = 0; i < 1000; i++)
+	    {
+	    	universalSet[i] = i + 1;
+	    }
 		this.set = set;
 	}
 	
@@ -73,11 +81,11 @@ public final class IntSet {
 		boolean isAvailable = false;
 		int complementIndex = 0;
 		
-		for (int i = 1; i <= 1000; i++)
+		for (int i = 0; i < universalSet.length; i++)
 		{
 			for (int j = 0; j < this.set.length; j++)
 			{
-				if (i == this.set[j]) // check value is find in the universal set
+				if (universalSet[i] == this.set[j]) // check value is find in the universal set
 				{
 					isAvailable = true;
 					break;
@@ -89,7 +97,7 @@ public final class IntSet {
 			}
 			if (!isAvailable) // if value is not find in universal set then add it into complemented set
 			{
-			   complementedSet.set[complementIndex] = i;
+			   complementedSet.set[complementIndex] = universalSet[i];
 			   complementIndex++;
 			}
 		}
@@ -110,56 +118,23 @@ public final class IntSet {
 		Arrays.sort(set1.set); // sort the set if not
 		Arrays.sort(set2.set); // sort the set if not
 		
-		if (set1.set.length == 0 || set2.set.length == 0)
-			throw new AssertionError();
-		
-		IntSet upperSet;
-		IntSet lowerSet;
-		
-		if (set1.set.length > set2.set.length)
-		{
-			upperSet = new IntSet(new int[set1.set.length]);
-			lowerSet = new IntSet(new int[set1.set.length]);
-		}
-		else
-		{
-			upperSet = new IntSet(new int[set2.set.length]);
-			lowerSet = new IntSet(new int[set1.set.length]);
-		}
-		for (int i = 0, j = 0; i < set1.set.length || j < set2.set.length; i++, j++)
-		{
-			if (set1.set[i] < set2.set[j])
-			{
-				upperSet = set1;
-				lowerSet = set2;
-				break;
-			}
-			else
-			{
-				upperSet = set2;
-				lowerSet = set1;
-				break;
-			}
-		}
-		
 		int union;
-		for (union = 0; union < upperSet.set.length + lowerSet.set.length;)
+		for (union = 0; union < set1.set.length + set2.set.length;)
 		{
-			for (int set1Index = 0; set1Index < upperSet.set.length; set1Index++) // add the element of first set
+			for (int set1Index = 0; set1Index < set1.set.length; set1Index++) // add the element of first set
 			{
-				unionSet.set[union] = upperSet.set[set1Index];
+				unionSet.set[union] = set1.set[set1Index];
 				union++;
 			}
 			
-			for (int set2Index = 0; set2Index < lowerSet.set.length; set2Index++) // add the element of second set
+			for (int set2Index = 0; set2Index < set2.set.length; set2Index++) // add the element of second set
 			{
-				unionSet.set[union] = lowerSet.set[set2Index];
+				unionSet.set[union] = set2.set[set2Index];
 				union++;
 			}
 		}
 		
 		removeDuplicates(unionSet, union);
-	    //show(unionSet, union);
 		return unionSet;
 	}
 	
@@ -173,7 +148,6 @@ public final class IntSet {
 	{
 		IntSet newUnionSet = new IntSet(new int[union]);
 		Arrays.sort(unionSet.set);
-		//show(unionSet, union);
 		boolean isFound;
 		int newUnionIndex = 0;
 		newUnionSet.set[newUnionIndex] = unionSet.set[0];
@@ -186,7 +160,7 @@ public final class IntSet {
 			{
 				isFound = true;
 			}
-			for (int j = 0; j < newUnionIndex; j++)
+			for (int j = 1; j <= newUnionIndex; j++)
 			{
 				if (unionSet.set[i] == newUnionSet.set[j])
 				{
