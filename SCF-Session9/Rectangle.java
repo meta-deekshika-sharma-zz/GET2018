@@ -3,19 +3,20 @@ package graphics;
 import java.util.Date;
 
 /**
- * @author Deekshika Sharma
- * This class implements the Shape interface and used for performing operations on Rectangle 
+ * @author Deekshika Sharma This class implements the Shape interface and used
+ *         for performing operations on Rectangle
  */
-public class Rectangle implements Shape{
+public class Rectangle implements Shape {
 
 	private int breadth;
 	private int length;
 	private Point point;
 	private double originDistance;
 	private Date localDateTime;
-	
+
 	/**
 	 * The constructor is initializes when rectangle shape is created
+	 * 
 	 * @param point
 	 * @param length
 	 * @param breadth
@@ -24,16 +25,16 @@ public class Rectangle implements Shape{
 		this.point = point;
 		this.length = length;
 		this.breadth = breadth;
-		this.originDistance = Utility.calculateDistance(point, new Point(0,0));
+		this.originDistance = Utility.calculateDistance(point, new Point(0, 0));
 		this.localDateTime = new Date();
 	}
-	
+
 	/**
 	 * Return the area of the rectangle
 	 */
 	@Override
 	public double getArea() {
-		
+
 		return length * breadth;
 	}
 
@@ -42,7 +43,7 @@ public class Rectangle implements Shape{
 	 */
 	@Override
 	public double getPerimeter() {
-		
+
 		return 2 * (length + breadth);
 	}
 
@@ -51,7 +52,7 @@ public class Rectangle implements Shape{
 	 */
 	@Override
 	public Point getOrigin() {
-		
+
 		return new Point(point.getX(), point.getY());
 	}
 
@@ -60,8 +61,11 @@ public class Rectangle implements Shape{
 	 */
 	@Override
 	public boolean isPointEnclosed(Point isEnclosedPoint) {
-	
-		if (isEnclosedPoint.getX() >= point.getX() && isEnclosedPoint.getX() <= (point.getX() + length) && isEnclosedPoint.getY() >= point.getY() && isEnclosedPoint.getY() <= (point.getY() + breadth))
+
+		if (isEnclosedPoint.getX() >= point.getX()
+				&& isEnclosedPoint.getX() <= (point.getX() + breadth)
+				&& isEnclosedPoint.getY() >= point.getY()
+				&& isEnclosedPoint.getY() <= (point.getY() + length))
 			return true;
 		else
 			return false;
@@ -72,12 +76,13 @@ public class Rectangle implements Shape{
 	 */
 	@Override
 	public ShapeTypes getShapeType() {
-		
+
 		return ShapeTypes.RECTANGLE;
 	}
-	
+
 	/**
-	 * This method will return the distance from the origin of the screen to the origin of rectangle
+	 * This method will return the distance from the origin of the screen to the
+	 * origin of rectangle
 	 */
 	@Override
 	public double getOriginDistance() {
@@ -88,5 +93,5 @@ public class Rectangle implements Shape{
 	public Date getCurrentDate() {
 		return localDateTime;
 	}
-	
+
 }

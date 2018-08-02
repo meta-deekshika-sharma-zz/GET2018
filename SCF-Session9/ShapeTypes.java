@@ -1,8 +1,8 @@
 package graphics;
 
 /**
- * @author Deekshika Sharma
- * This enum will specify the types of shapes which implements the shape interface
+ * @author Deekshika Sharma This enum will specify the types of shapes which
+ *         implements the shape interface
  */
 public enum ShapeTypes {
 
