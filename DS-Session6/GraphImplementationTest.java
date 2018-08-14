@@ -1,45 +1,88 @@
 package graphImplementation;
 
 import static org.junit.Assert.*;
-
-import java.util.ArrayList;
 import java.util.List;
-
-import org.junit.Before;
 import org.junit.Test;
 
 /**
  * @author Deekshika Sharma 
- * This class will have test cases related to graph implementation
+ * This method will have test cases for graph implementation
  */
 public class GraphImplementationTest {
 
-	private List<GraphNode> listOfNode = new ArrayList<GraphNode>();
-	GraphNode node1, node2, node3, node4;
+	// This test case will add edge and check for graph connectivity
+	@Test
+	public void graphConnectedTest() {
 
-	@Before
-	public void graphVerticesTest() {
-		node1 = new GraphNode("a");
-		node2 = new GraphNode("b");
-		node3 = new GraphNode("c");
-		node4 = new GraphNode("d");
+		GraphImplementation graph = new GraphImplementation(4);
+		graph.addEdge(0, 1, 2);
+		graph.addEdge(1, 2, 6);
+		graph.addEdge(2, 3, 5);
+		graph.addEdge(3, 0, 4);
 
-		listOfNode.add(node1);
-		listOfNode.add(node2);
-		listOfNode.add(node3);
-		listOfNode.add(node4);
+		assertTrue(graph.isConnected()); // if graph is connected then return
+											// true
 	}
-
-	GraphImplementation graph = new GraphImplementation(4, listOfNode);
 
 	@Test
 	public void graphTest() {
 
-		graph.addedge(node1, node2, 2);
-		graph.addedge(node1, node4, 4);
-		graph.addedge(node2, node3, 6);
-		graph.addedge(node3, node4, 5);
-		assertTrue(graph.isConnected());
+		GraphImplementation graph = new GraphImplementation(6);
+		graph.addEdge(0, 1, 2);
+		graph.addEdge(1, 2, 6);
+		graph.addEdge(2, 3, 5);
+		graph.addEdge(3, 0, 4);
+		graph.addEdge(4, 5, 4);
+
+		assertFalse(graph.isConnected()); // if graph is disconnected return
+											// false
 	}
 
+	// This test case will check for vertices reachable from specified node
+	@Test
+	public void graphReachableTest() {
+
+		GraphImplementation graph = new GraphImplementation(6);
+		graph.addEdge(0, 1, 2);
+		graph.addEdge(1, 2, 6);
+		graph.addEdge(2, 3, 5);
+		graph.addEdge(3, 0, 4);
+		graph.addEdge(4, 5, 4);
+
+		List<Integer> reachable = graph.reachable(5);
+
+		for (Integer i : reachable)
+			System.out.println(i);
+	}
+
+	// This test case will check for shortest path
+	@Test
+	public void graphShortestTest() {
+
+		GraphImplementation graph = new GraphImplementation(4);
+		graph.addEdge(0, 1, 2);
+		graph.addEdge(1, 2, 6);
+		graph.addEdge(2, 3, 5);
+		graph.addEdge(3, 0, 4);
+
+		assertEquals(8, graph.shortestPath(0, 2));
+
+	}
+
+	// This test case will check for MST
+	@Test
+	public void graphMSTTest() {
+
+		GraphImplementation graph = new GraphImplementation(4);
+		graph.addEdge(0, 1, 2);
+		graph.addEdge(1, 2, 6);
+		graph.addEdge(2, 3, 5);
+		graph.addEdge(3, 0, 4);
+		graph.addEdge(0, 2, 2);
+
+		List<Edge> g = graph.minimumSpanningTree();
+		for (Edge e : g)
+			System.out.println(e.getSource() + " " + e.getDestination() + " "
+					+ e.getWeight());
+	}
 }

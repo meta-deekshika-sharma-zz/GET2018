@@ -4,15 +4,15 @@ import java.util.List;
 
 /**
  * @author Deekshika Sharma
- * This interface have several methods which will implemented in concrete class
+ * This interface have methods for graph implementation and implements in concrete class
  */
 public interface Graph {
 
-	public boolean isConnected();
-	
-	public List<GraphNode> reachable(GraphNode graphNode);
-	
-	public List<Edge> minimumSpanningTree();
-	
-	public List<GraphNode> shortestPath(GraphNode source, GraphNode destination);
+    public boolean isConnected();
+    
+    public List<Integer> reachable(int source);
+    
+    public List<Edge> minimumSpanningTree();
+    
+    public int shortestPath(int source, int destination);
 }

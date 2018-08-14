@@ -1,27 +1,34 @@
 package graphImplementation;
 
 /**
- * @author Deekshika Sharma
- * This class will have a edge information with their source node, destination node and weight
+ * @author Deekshika Sharma 
+ * This edge class will have source, destination and weight of edge
  */
-public class Edge implements Comparable<Edge>{
-
-	private final GraphNode source;
-	private final GraphNode destination;
+public class Edge {
+	private int source;
+	private int destination;
 	private int weight;
-	
-	public Edge(GraphNode source, GraphNode destination, int weight) {
-		this.source = source;
-		this.destination = destination;
-		this.weight = weight;
+
+	public Edge(int source, int destination, int weight) {
+		this.setSource(source);
+		this.setDestination(destination);
+		this.setWeight(weight);
 	}
 
-	public GraphNode getSource() {
+	public int getSource() {
 		return source;
 	}
 
-	public GraphNode getDestination() {
+	public void setSource(int source) {
+		this.source = source;
+	}
+
+	public int getDestination() {
 		return destination;
+	}
+
+	public void setDestination(int destination) {
+		this.destination = destination;
 	}
 
 	public int getWeight() {
@@ -31,11 +38,4 @@ public class Edge implements Comparable<Edge>{
 	public void setWeight(int weight) {
 		this.weight = weight;
 	}
-
-	@Override
-	public int compareTo(Edge edge) {
-		
-		return (this.weight - edge.weight);
-	}
-	
 }
