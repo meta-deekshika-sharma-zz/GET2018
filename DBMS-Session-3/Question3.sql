@@ -23,7 +23,7 @@ LIMIT 20;
 
 #Display Monthly sales revenue of the StoreFront for last 6 months. It should display each month’s sale
 SELECT EXTRACT(MONTH FROM o.PlacedDate) AS month , SUM(op.Quantity * p.Price) AS totalorder
-FROM Orders AS o, Product AS p, OrderProductRelation AS op
+FROM Orders AS o, Product AS p, OrderProduct AS op
 WHERE o.Id = op.OrderId AND p.Id = op.ProductId AND o.PlacedDate > (DATE_SUB(CURDATE(), INTERVAL 6 MONTH))
 GROUP BY MONTH(o.PlacedDate);
 
