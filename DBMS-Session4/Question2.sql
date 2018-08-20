@@ -7,12 +7,12 @@ CREATE PROCEDURE averageSales(month INT, year INT)
 BEGIN
 
     SELECT SUM(opr.Quantity * p.price) / DAY(LAST_DAY(o.PlacedDate)) AS productSum, p.Name
-    FROM orderProductRelation as opr
-    LEFT JOIN product AS p ON opr.productID = p.Id
-    LEFT JOIN orders AS o ON opr.orderID = o.Id
+    FROM OrderProduct as opr
+    INNER JOIN Product AS p ON opr.ProductID = p.Id
+    INNER JOIN Orders AS o ON opr.OrderID = o.Id
     WHERE MONTH(o.PlacedDate) = month
     AND YEAR(o.PlacedDate) = year
-    GROUP BY opr.productID;
+    GROUP BY opr.ProductID;
     
 END **
 
