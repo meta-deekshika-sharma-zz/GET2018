@@ -10,7 +10,7 @@ CREATE FUNCTION no_Of_Order(month INT, year INT)
  DECLARE noOfOrders INT;
  
     SELECT COUNT(opr.OrderId) INTO noOfOrders
-    FROM Orders AS o INNER JOIN OrderProductRelation AS opr ON o.Id = opr.OrderId
+    FROM Orders AS o INNER JOIN OrderProduct AS opr ON o.Id = opr.OrderId
     WHERE MONTH(o.PlacedDate) = month AND YEAR(o.PlacedDate) = year;
     
 RETURN (noOfOrders);
@@ -29,7 +29,7 @@ DECLARE monthHavingMaxOrder INT;
 
    SELECT MAX(a.monthHavingMaxOrder) INTO monthHavingMaxOrder
    FROM (SELECT MONTH(o.PlacedDate) monthHavingMaxOrder, COUNT(opr.OrderId)
-         FROM Orders AS o INNER JOIN OrderProductRelation AS opr ON o.Id = opr.OrderId
+         FROM Orders AS o INNER JOIN OrderProduct AS opr ON o.Id = opr.OrderId
          WHERE YEAR(o.PlacedDate) = year
          GROUP BY MONTH(o.PlacedDate)
    ) a;
