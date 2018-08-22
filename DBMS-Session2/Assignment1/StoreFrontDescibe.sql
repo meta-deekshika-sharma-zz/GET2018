@@ -2,11 +2,11 @@ use store_front;
 
 describe User;
 describe Role;
-describe UserRoleRelation;
+describe UserRole;
 describe Address;
 describe Orders;
 describe Product;
-describe OrderProductRelation;
+describe OrderProduct;
 describe Category;
-describe ProductCategoryRelation;
+describe ProductCategory;
 describe Image;
