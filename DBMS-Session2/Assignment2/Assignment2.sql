@@ -1,6 +1,6 @@
 #2
 SELECT p.Id, p.Name, c.Name, p.Price
-FROM Product AS p, Category AS C, ProductCategoryRelation AS cpr
+FROM Product AS p, Category AS C, ProductCategory AS cpr
 WHERE p.Id = cpr.ProductId AND c.Id = cpr.CategoryId
 ORDER BY ProductId DESC;
 
@@ -22,7 +22,7 @@ WHERE c.ParentCategoryId = ca.Id AND c.Id NOT IN (SELECT ParentCategoryId FROM C
 
 #6
 SELECT p.Name, p.Description, p.Price
-FROM Product AS p, Category AS c, ProductCategoryRelation AS cpr
+FROM Product AS p, Category AS c, ProductCategory AS cpr
 WHERE c.Name = "Mobiles" AND p.Id = cpr.ProductId AND c.Id = cpr.CategoryId;
 
 #7
