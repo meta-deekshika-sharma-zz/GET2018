@@ -27,8 +27,8 @@ NOT DETERMINISTIC
 BEGIN
 DECLARE monthHavingMaxOrder INT;
 
-   SELECT MAX(a.monthHavingMaxOrder) INTO monthHavingMaxOrder
-   FROM (SELECT MONTH(o.PlacedDate) monthHavingMaxOrder, COUNT(opr.OrderId)
+   SELECT MAX(a.maxOrder) INTO monthHavingMaxOrder
+   FROM (SELECT MONTH(o.PlacedDate) monthHavingMaxOrder, COUNT(opr.OrderId) maxOrder
          FROM Orders AS o INNER JOIN OrderProduct AS opr ON o.Id = opr.OrderId
          WHERE YEAR(o.PlacedDate) = year
          GROUP BY MONTH(o.PlacedDate)
