@@ -57,10 +57,10 @@ INSERT INTO Image(URL, Text, ProductId) VALUES
 INSERT INTO Image(URL, Text, ProductId) VALUES
 ("www.imageMobile2.bnj.in", "Mobile image2", 1);
 
-INSERT INTO ProductCategoryRelation(CategoryId, ProductId) VALUES
+INSERT INTO ProductCategory(CategoryId, ProductId) VALUES
 (2, 1);
 
-INSERT INTO ProductCategoryRelation(CategoryId, ProductId) VALUES
+INSERT INTO ProductCategory(CategoryId, ProductId) VALUES
 (2, 2);
 
 INSERT INTO Orders(PlacedDate, UserId, AddressId) VALUES
@@ -75,26 +75,26 @@ INSERT INTO Orders(PlacedDate, UserId, AddressId) VALUES
 INSERT INTO Orders(PlacedDate, UserId, AddressId) VALUES
 ("2018-08-5", 2, 1);
 
-INSERT INTO OrderProductRelation(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
+INSERT INTO OrderProduct(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
 (4, 1, "Order Placed", "2018-08-20", "2018-08-18", 2);
 
-INSERT INTO OrderProductRelation(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
+INSERT INTO OrderProduct(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
 (4, 2, "Order Placed", "2018-08-20", "2018-08-18", 3);
 
-INSERT INTO OrderProductRelation(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
+INSERT INTO OrderProduct(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
 (1, 1, "Shipped", "2018-08-20", "2018-08-16", 2);
 
-INSERT INTO OrderProductRelation(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
+INSERT INTO OrderProduct(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
 (1, 2, "Shipped", "2018-08-20", "2018-08-16", 3);
 
-INSERT INTO OrderProductRelation(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
+INSERT INTO OrderProduct(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
 (2, 2, "Order Placed", "2018-08-22", "2018-08-19", 1);
 
-INSERT INTO OrderProductRelation(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
+INSERT INTO OrderProduct(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
 (2, 1, "Order Placed", "2018-08-26", "2018-08-23", 2);
 
-INSERT INTO OrderProductRelation(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
+INSERT INTO OrderProduct(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
 (3, 2, "Order Placed", "2018-08-22", "2018-08-19", 1);
 
-INSERT INTO OrderProductRelation(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
+INSERT INTO OrderProduct(OrderId, ProductId, Status, DeliveryDate, ShipDate, Quantity) VALUES
 (3, 1, "Order Placed", "2018-08-26", "2018-08-23", 2);
