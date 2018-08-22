@@ -14,10 +14,10 @@ ORDER BY sum DESC
 LIMIT 10;
 
 #Display top 20 Products which are ordered most in last 60 days along with numbers.
-SELECT p.Id, p.Name, COUNT(p.Id) AS count
+SELECT p.Id, p.Name, COUNT(op.Id) AS count
 FROM Product AS p, Orders AS o, OrderProduct AS op
 WHERE p.Id = op.ProductId AND op.OrderId = o.Id AND DATEDIFF(CURDATE(), o.PlacedDate) <= 60
-GROUP BY p.Id
+GROUP BY op.Id
 ORDER BY count DESC
 LIMIT 20;
 
