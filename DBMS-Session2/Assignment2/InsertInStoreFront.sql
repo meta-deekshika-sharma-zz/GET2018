@@ -23,9 +23,9 @@ INSERT INTO Role(Name) VALUES("Administrator");
 
 INSERT INTO Role(Name) VALUES("User");
 
-INSERT INTO RoleRelation(UserId, RoleId) VALUES(1, 1);
+INSERT INTO UserRole(UserId, RoleId) VALUES(1, 1);
 
-INSERT INTO RoleRelation(UserId, RoleId) VALUES(2, 2);
+INSERT INTO UserRole(UserId, RoleId) VALUES(2, 2);
 
 INSERT INTO Product(Name, Price, Description, Stock) VALUES
 ("Redmi 5", 10000.0, "A phone with nice camera", 100);
