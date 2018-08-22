@@ -1,7 +1,7 @@
 use store_front;
 
-DROP TABLE ProductCategoryRelation;
-DROP TABLE OrderProductRelation;
+DROP TABLE ProductCategory;
+DROP TABLE OrderProduct;
 DROP TABLE Image;
 DROP TABLE Product;
 
@@ -18,7 +18,7 @@ Text VARCHAR(20),
 FOREIGN KEY(Id) REFERENCES Product(Id),
 PRIMARY KEY(Id));
 
-CREATE TABLE OrderProductRelation(OrderId INT NOT NULL,
+CREATE TABLE OrderProduct(OrderId INT NOT NULL,
 ProductId INT NOT NULL,
 Status VARCHAR(20) NOT NULL,
 DeliveryDate DATE NOT NULL,
@@ -28,7 +28,7 @@ PRIMARY KEY (OrderId, ProductId),
 FOREIGN KEY(OrderId) REFERENCES Orders(Id) ON DELETE CASCADE,
 FOREIGN KEY(ProductId) REFERENCES Product(Id) ON DELETE CASCADE);
 
-CREATE TABLE ProductCategoryRelation(CategoryId INT NOT NULL,
+CREATE TABLE ProductCategory(CategoryId INT NOT NULL,
 ProductId INT NOT NULL,
 PRIMARY KEY (CategoryId, ProductId),
 FOREIGN KEY(CategoryId) REFERENCES Category(Id) ON DELETE CASCADE,
