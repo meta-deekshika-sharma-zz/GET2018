@@ -57,7 +57,7 @@ public class JDBCQuery {
 		
 		List<OrderPojo> orderList = new ArrayList<OrderPojo>();
 		String selectOrder = "select o.Id, o.PlacedDate, SUM(op.Quantity * p.Price) AS amount "
-				+ "from OrderProductRelation AS op INNER JOIN Orders AS o ON op.OrderId = o.Id "
+				+ "from OrderProduct AS op INNER JOIN Orders AS o ON op.OrderId = o.Id "
 				+ "INNER JOIN Product AS p ON p.Id = op.ProductId "
 				+ "WHERE op.Status = 'Shipped' AND o.UserId = '"+userId+"'"
 				+ " GROUP BY o.Id "
@@ -94,7 +94,7 @@ public class JDBCQuery {
 	{
         String insertImage = "SET SQL_SAFE_UPDATES = 0;"
         		+ "UPDATE Product SET ProductStatus = 'Inactive' "
-        		+ "WHERE Id NOT IN (SELECT op.ProductId FROM OrderProductRelation op INNER JOIN Orders o ON o.Id = op.OrderId"
+        		+ "WHERE Id NOT IN (SELECT op.ProductId FROM OrderProduct op INNER JOIN Orders o ON o.Id = op.OrderId"
         		+ "WHERE o.PlacedDate >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR));";
 		
 		try(Connection conn = StoreFrontUtility.getConnection();
