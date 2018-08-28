@@ -1,0 +1,88 @@
+<!Doctype HTML>
+
+<html>
+
+    <head>
+	    <title> Registeration</title>
+		<script type="text/javascript" src = "validation.js">
+		</script>
+		
+		<style>
+		  #tab tr{
+		    padding-bottom : 5000px;
+		  }
+		</style>
+	</head>
+	
+	<body>
+	    <table width = "70%" align = "center" cellspacing = "15">
+	       <tr>
+		       <td> <img src = "Images\\1200px-HTML5_logo_and_wordmark.svg.png" width = "7%"> </td>
+			   <td width = "50%" align = "right">
+                    <a href = "assignment1.html">Home</a>
+                    <a href = "#">About</a>
+                    <a href = "#">Product</a>
+                    <a href = "#">Gallery</a>
+                    <a href = "assignment2.html">Contact</a>		
+                    <a href = "login.html">Login</a>
+                    <a href = "register.html?">Registration</a>					
+			   </td>
+		   </tr>
+	   </table>
+	   <hr/>
+	
+	
+	    <h1 align=center> Registeration </h1>
+		
+		<table align=center cellspacing = "10" id = "tab">
+		    <form name = "registerForm" action = "login.html" method = "post">
+			    <tr>
+				    <td>First Name</td>
+					<td> <input type="text" id="firstName" style = "height:25px"/></td>
+				</tr>
+				
+				<tr>
+				    <td>Last Name</td>
+					<td> <input type="text" id="lastName" style = "height:25px"/></td>
+				</tr>
+				
+				<tr>
+				    <td>Email</td>
+					<td> <input type="email" id="email" style = "height:25px"/></td>
+				</tr>
+				
+				<tr>
+				    <td>Password</td>
+					<td> <input type="password" id="password" style = "height:25px"/></td>
+				</tr>
+				
+				<tr>
+				    <td>Confirm Password</td>
+					<td> <input type="password" id="confirmPassword" style = "height:25px"/></td>
+				</tr>
+				
+				<tr>
+				    <td>Contact Number</td>
+					<td> <input type="number" id="contactNumber" style = "height:25px"/></td>
+				</tr>
+				
+				<tr>
+				    <td>Company/Institution</td>
+					<td id="company">
+					    <select style = "height:25px">
+						    <option> Metacube Pvt. Ltd.</option>
+						    <option> Google </option>
+							<option> Microsoft </option>
+							<option> Apple </option>
+							<option> Facebook </option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr>
+				    <td> <input type="button" value="Register" onclick = "return registerationValid()"/></td>
+				</tr>
+			</form>
+		</table>
+	</body>
+</html>
