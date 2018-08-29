@@ -1,0 +1,92 @@
+	<!doctype HTML>
+
+	<html>
+
+		<head>
+			<title> Profile </title>
+			<script src = "editProfileValidation.js"></script>
+			<link rel = "stylesheet" href = "appliedcss.css" />
+		</head>
+		
+		<body>
+			<table width = "70%" align = "center" cellspacing = "15">
+			   <tr>
+				   <td> <img src = "Images\\1200px-HTML5_logo_and_wordmark.svg.png" width = "10%"> </td>
+				   <td width = "50%" align = "right" id = "referenceLink">
+						<a href = "home.html">Home</a>
+						<a href = "#">About</a>
+						<a href = "#">Product</a>
+						<a href = "#">Gallery</a>
+						<a href = "contact.html">Contact</a>		
+						Deekshika | 
+						<a href = "home.html">Logout</a>					
+				   </td>
+			   </tr>
+		   </table>
+		   <hr/>
+			<h1 align=center>Profile</h1> 
+			
+			<table align = center cellspacing = "10">
+			  <form>
+				<tr>
+					<td id = "label">First Name</td>
+					<td>
+						<input type = "text" required id = "firstName"/>
+					</td>	
+				</tr>
+				
+				<tr>
+					<td id = "label">Last Name</td>
+					<td>
+						<input type = "text" required id = "lastName"/>
+					</td>	
+				</tr>
+				
+				<tr>
+					<td id = "label">Email</td>
+					<td>
+						<input type = "text" required id = "email"/>
+					</td>	
+				</tr>
+				
+				<tr>
+					<td id = "label">Password</td>
+					<td>
+						<input type = "password" required id = "password"/>
+					</td>	
+				</tr>
+				
+				<tr>
+					<td id = "label">Confirm Password</td>
+					<td>
+						<input type = "password" required id = "confirmPassword"/>
+					</td>	
+				</tr>
+				
+				<tr>
+					<td id = "label">Contact Number</td>
+					<td>
+						<input type = "number" required id = "contactNumber"/>
+					</td>	
+				</tr>
+				
+				<tr>
+					<td id = "label">Company/Institution</td>
+					<td>
+						<select id = "company">
+							<option> Metacube Pvt. Ltd.</option>
+							<option> Google </option>
+							<option> Microsoft </option>
+							<option> Apple </option>
+							<option> Facebook </option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td> <input type = "button" value = "Edit Profile" onclick = "editProfile()" id = "submitButton"/> </td>
+				</tr>
+			  </form>
+			</table>
+		</body>
+	</html>
