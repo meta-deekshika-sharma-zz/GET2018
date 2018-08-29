@@ -4,20 +4,22 @@
 
     <head>
 	    <title> Profile </title>
+		<script src = "editProfileValidation.js"></script>
+		<link rel = "stylesheet" href = "appliedcss.css" />
 	</head>
 	
 	<body>
 	    <table width = "70%" align = "center" cellspacing = "15">
 	       <tr>
-		       <td> <img src = "Images\\1200px-HTML5_logo_and_wordmark.svg.png" width = "7%"> </td>
-			   <td width = "50%" align = "right">
-                    <a href = "assignment1.html">Home</a>
+		       <td> <img src = "Images\\1200px-HTML5_logo_and_wordmark.svg.png" width = "10%"> </td>
+			   <td width = "50%" align = "right" id = "referenceLink">
+                    <a href = "home.html">Home</a>
                     <a href = "#">About</a>
                     <a href = "#">Product</a>
                     <a href = "#">Gallery</a>
-                    <a href = "assignment2.html">Contact</a>		
+                    <a href = "contact.html">Contact</a>		
                     Deekshika | 
-                    <a href = "assignment1.html">Logout</a>					
+                    <a href = "home.html">Logout</a>					
 			   </td>
 		   </tr>
 	   </table>
@@ -27,62 +29,62 @@
 		<table align = center cellspacing = "10">
 		  <form>
 		    <tr>
-			    <td>First Name</td>
+			    <td id = "label">First Name</td>
 				<td>
-				    <input type = "text" value = "Deekshika" />
+				    <input type = "text" required id = "firstName"/>
 				</td>	
 			</tr>
 			
 			<tr>
-			    <td>Last Name</td>
+			    <td id = "label">Last Name</td>
 				<td>
-				    <input type = "text" value = "Sharma" />
+				    <input type = "text" required id = "lastName"/>
 				</td>	
 			</tr>
 			
 			<tr>
-			    <td>Email</td>
+			    <td id = "label">Email</td>
 				<td>
-				    <input type = "email" value = "deekshika.sharma@metacube.com" />
+				    <input type = "text" required id = "email"/>
 				</td>	
 			</tr>
 			
 			<tr>
-			    <td>Password</td>
+			    <td id = "label">Password</td>
 				<td>
-				    <input type = "password" value = "deekshika" />
+				    <input type = "password" required id = "password"/>
 				</td>	
 			</tr>
 			
 			<tr>
-			    <td>Confirm Password</td>
+			    <td id = "label">Confirm Password</td>
 				<td>
-				    <input type = "password" value = "deekshika" />
+				    <input type = "password" required id = "confirmPassword"/>
 				</td>	
 			</tr>
 			
 			<tr>
-			    <td>Contact Number</td>
+			    <td id = "label">Contact Number</td>
 				<td>
-				    <input type = "number" value = "7891617377" />
+				    <input type = "number" required id = "contactNumber"/>
 				</td>	
 			</tr>
 			
 			<tr>
-				<td>Company/Institution</td>
+				<td id = "label">Company/Institution</td>
 				<td>
-				    <select>
+				    <select id = "company">
+						<option> Metacube Pvt. Ltd.</option>
 						<option> Google </option>
 						<option> Microsoft </option>
 						<option> Apple </option>
 						<option> Facebook </option>
-						<option> Metacube </option>
 					</select>
 				</td>
 			</tr>
 			
 			<tr>
-			    <td> <input type = "submit" value = "Edit" /> </td>
+			    <td> <input type = "button" value = "Edit Profile" onclick = "editProfile()" id = "submitButton"/> </td>
 			</tr>
 		  </form>
 		</table>

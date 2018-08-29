@@ -4,49 +4,61 @@
 
     <head>
 	    <title>Login</title>
+		<script src = "loginValidation.js"></script>
+		<script src = "registerValidation.js"></script>
+		
+		<link rel = "stylesheet" href = "appliedcss.css" />
 	</head>
 	
 	<body>
-	    <table width = "70%" align = "center" cellspacing = "15">
+	    <table width = "70%" align = "center" cellspacing = "5">
 	       <tr>
-		       <td> <img src = "Images\\1200px-HTML5_logo_and_wordmark.svg.png" width = "7%"> </td>
-			   <td width = "50%" align = "right">
-                    <a href = "assignment1.html">Home</a>
+		       <td> <img src = "Images\\1200px-HTML5_logo_and_wordmark.svg.png" width = "10%"> </td>
+			   <td width = "50%" align = "right" id = "referenceLink">
+                    <a href = "home.html">Home</a>
                     <a href = "#">About</a>
                     <a href = "#">Product</a>
                     <a href = "#">Gallery</a>
-                    <a href = "assignment2.html">Contact</a>		
+                    <a href = "contact.html">Contact</a>		
                     <a href = "login.html">Login</a>
-                    <a href = "register.html?">Registration</a>					
+                    <a href = "register.html">Registration</a>					
 			   </td>
 		   </tr>
 	   </table>
 	   <hr/>
 	   
-	    <h1 align = center>Login</h1>
+	    <h1 align = center>Sign In</h1>
 		
 		<table align = center cellspacing = "10">
-		  <form action = "profile.html">
+		  <form action = "profile.html" name = "loginForm">
 		    <tr>
-			    <td> Email </td>
+			    <td id = "label"> Email </td>
 				<td>
-				   <input type = "email" />
+				   <input type = "text" id = "email" onblur = "emailValid()"/>
 				</td>
+			</tr>
+			<tr>
+			    <td />
+			    <td> <span id = "emailSpan" /> </td>
 			</tr>
 			
 			<tr>
-			    <td> Password </td>
+			    <td  id = "label"> Password </td>
 				<td>
-				   <input type = "password" />
+				   <input type = "password" id = "password" onblur = "passwordValid()"/>
 				</td>
+			</tr>
+			<tr>
+			    <td />
+			    <td> <span id = "passwordSpan" /> </td>
 			</tr>
 			
 			<tr>
 				<td>
-				   <input type = "submit" value = "Login" />
+				   <input type = "button" value = "Login" id = "submitButton" onclick = "return loginValid()"/>
 				</td>
 				<td align = right>
-				    <a href = "#"> Not Register ???</a>
+				    <a href = "register.html"> Not Register ???</a>
 				</td>
 			</tr>
 		  </form>

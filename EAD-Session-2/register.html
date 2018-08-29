@@ -3,73 +3,94 @@
 <html>
 
     <head>
+	    <meta charset = "utf-8" />
 	    <title> Registeration</title>
-		<script type="text/javascript" src = "validation.js">
+		<script src = "registerValidation.js">
 		</script>
-		
-		<style>
-		  #tab tr{
-		    padding-bottom : 5000px;
-		  }
-		</style>
+		<link rel = "stylesheet" href = "appliedcss.css" />
 	</head>
 	
 	<body>
 	    <table width = "70%" align = "center" cellspacing = "15">
 	       <tr>
-		       <td> <img src = "Images\\1200px-HTML5_logo_and_wordmark.svg.png" width = "7%"> </td>
-			   <td width = "50%" align = "right">
-                    <a href = "assignment1.html">Home</a>
+		       <td> <img src = "Images\1200px-HTML5_logo_and_wordmark.svg.png" width = "10%"> </td>
+			   <td width = "50%" align = "right" id = "referenceLink">
+                    <a href = "home.html">Home</a>
                     <a href = "#">About</a>
                     <a href = "#">Product</a>
                     <a href = "#">Gallery</a>
-                    <a href = "assignment2.html">Contact</a>		
+                    <a href = "contact.html">Contact</a>		
                     <a href = "login.html">Login</a>
-                    <a href = "register.html?">Registration</a>					
+                    <a href = "register.html">Registration</a>					
 			   </td>
 		   </tr>
 	   </table>
 	   <hr/>
 	
 	
-	    <h1 align=center> Registeration </h1>
+	    <h1 align=center> Sign Up </h1>
 		
-		<table align=center cellspacing = "10" id = "tab">
-		    <form name = "registerForm" action = "login.html" method = "post">
+		<table align=center>
+		    <form name = "registerForm" action = "login.html">
 			    <tr>
-				    <td>First Name</td>
-					<td> <input type="text" id="firstName" style = "height:25px"/></td>
+				    <td id = "label">First Name</td>
+					<td> <input type="text" id = "firstName" onblur = "firstNameValid()"/></td>	
+				</tr>
+				<tr>
+				    <td></td>
+				    <td> <span id = "firstNameSpan"/> </td>
+				</tr>
+				<tr>
+				    <td id = "label">Last Name</td>
+					<td> <input type="text" id="lastName" required onblur = "lastNameValid()" /></td>	
+				</tr>
+				<tr>
+				    <td></td>
+				    <td> <span id = "lastNameSpan" /> </td>
 				</tr>
 				
 				<tr>
-				    <td>Last Name</td>
-					<td> <input type="text" id="lastName" style = "height:25px"/></td>
+				    <td id = "label">Email</td>
+					<td> <input type="text" id="email"  required onblur = "emailValid()"/></td>
+				</tr>
+				</tr>
+				    <td></td>
+				    <td> <span id = "emailSpan" /> </td>
+				<tr>
+				
+				<tr>
+				    <td id = "label">Password</td>
+					<td> <input type="password" id="password"  required onblur = "passwordValid()"/></td>	
+				</tr>
+				</tr>
+				    <td></td>
+				    <td> <span id = "passwordSpan"/> </td>
+				<tr>
+				
+				<tr>
+				    <td id = "label">Confirm Password</td>
+					<td> <input type="password" id="confirmPassword" required onblur = "confirmPasswordValid()"/></td>
+				</tr>
+				</tr>
+				    <td></td>
+				    <td> <span id = "confirmPasswordSpan" /> </td>
+				<tr>
+				
+				<tr>
+				    <td id = "label">Contact Number</td>
+					<td> <input type="number" id="contactNumber"  required onblur = "contactNumberValid()" /></td>
+					
+				</tr>
+				    <td></td>
+				    <td> <span id = "contactNumberSpan" /> </td>
+				<tr>
+				   
 				</tr>
 				
 				<tr>
-				    <td>Email</td>
-					<td> <input type="email" id="email" style = "height:25px"/></td>
-				</tr>
-				
-				<tr>
-				    <td>Password</td>
-					<td> <input type="password" id="password" style = "height:25px"/></td>
-				</tr>
-				
-				<tr>
-				    <td>Confirm Password</td>
-					<td> <input type="password" id="confirmPassword" style = "height:25px"/></td>
-				</tr>
-				
-				<tr>
-				    <td>Contact Number</td>
-					<td> <input type="number" id="contactNumber" style = "height:25px"/></td>
-				</tr>
-				
-				<tr>
-				    <td>Company/Institution</td>
-					<td id="company">
-					    <select style = "height:25px">
+				    <td id = "label">Company/Institution</td>
+					<td>
+					    <select id="company">
 						    <option> Metacube Pvt. Ltd.</option>
 						    <option> Google </option>
 							<option> Microsoft </option>
@@ -79,8 +100,8 @@
 					</td>
 				</tr>
 				
-				<tr>
-				    <td> <input type="button" value="Register" onclick = "return registerationValid()"/></td>
+				<tr align = center>
+				    <td> <input type="button" value="Register" id = "submitButton" onclick = "return registerationValid()"/></td>
 				</tr>
 			</form>
 		</table>
