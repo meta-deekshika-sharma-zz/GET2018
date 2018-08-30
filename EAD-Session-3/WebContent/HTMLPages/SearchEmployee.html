@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Search Employee</title>
+<link rel = "stylesheet" href = "../CSS/Employee.css"/>
+<script src = "../JavaScript/EmployeeValidation.js"></script>
+</head>
+<body>
+      <h1 align="center">Search Employee</h1>
+      <form action = "../SearchEmployeeServlet" name = "searchEmployeeForm">
+          <table>
+              <tr>
+                  <td id = "label"> <input type = "text" placeholder = "Name" name = "name" id = "firstName" onblur="validateFirstName()"/> </td>
+              </tr>
+              
+              <tr>
+                  <td> <input type = "button" value = "Search" id = "searchEmployeeButton" onclick = "return searchEmployee()"/> </td>
+              </tr>
+          </table>
+      </form>
+</body>
+</html>

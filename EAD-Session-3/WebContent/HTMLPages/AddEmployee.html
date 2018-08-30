@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Employee Data</title>
+<link rel = "stylesheet" href = "../CSS/Employee.css"/>
+<script src = "../JavaScript/EmployeeValidation.js"></script>
+</head>
+<body>
+      <h1 align = "center"> Add Employee</h1>
+      <form action = "../AddEmployeeServlet" name = "addEmployeeForm">
+          <table>
+              <tr>
+                  <td id = "label"> First Name </td>
+                  <td> <input type = "text" name = "firstName" id = "firstName" onblur="validateFirstName()" required/> </td>
+              </tr>
+              
+              <tr>
+                  <td id = "label"> Last Name </td>
+                  <td> <input type = "text" name = "lastName" id = "lastName" onblur="validateLastName()" required/> </td>
+              </tr>
+              
+              <tr>
+                  <td id = "label"> Email </td>
+                  <td> <input type = "email" name = "email" id = "email" onblur="validateEmail()" required/> </td>
+              </tr>
+              
+              <tr>
+                  <td id = "label"> Age </td>
+                  <td> <input type = "number" name = "age" id = "age" onblur="validateAge()" required/> </td>
+              </tr>
+              
+              <tr>
+                  <td> <input type="button" value="Add" id = "addEmployeeButton" onclick = "return addEmployee()""/> </td>
+              </tr>
+          </table>
+      </form>
+</body>
+</html>
