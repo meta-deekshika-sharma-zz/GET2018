@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel = "stylesheet" href = "../CSS/UserCSS.css" />
+<script type="text/javascript" src = "../JavaScript/UserValidation.js"></script>
+</head>
+<body>
+      <h1 align="center">Sign In</h1>
+      <form action = "../ProfileServlet" name = "form1">
+          <table>
+              <tr>
+                  <td id = "label"> Email </td>
+                  <td> <input type = "email" name = "email" id = "email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/> </td>
+              </tr>
+              
+              <tr>
+                  <td id = "label"> Password </td>
+                  <td> <input type = "password" name = "password" id = "password" required="required" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"/> </td>
+              </tr>
+     		
+              <tr>
+                  <td> <input type = "submit" value = "Sign In" id = "loginUser" name = "profileType"/> </td>
+              </tr>
+          </table>
+      </form>
+</body>
+</html>
