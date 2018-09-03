@@ -1,83 +1,85 @@
 @CHARSET "ISO-8859-1";
 
 #label {
-	    height : 20px;
-		padding-right : 30px;
-		padding-bottom : 20px;
-		font-size : 25px;
-		font-style : italic;
+	height: 20px;
+	padding-right: 30px;
+	padding-bottom: 20px;
+	font-size: 25px;
+	font-style: italic;
 }
 
-#firstName, #lastName, #email, #dob, #password, #organization, #contactNumber {
-		height : 25px;
-		width : 200px;
+#firstName, #lastName, #email, #dob, #password, #organization,
+	#contactNumber {
+	height: 25px;
+	width: 200px;
 }
-	
+
 #registerUser, #loginUser, #updateProfileButton, #editProfileButton {
-        height : 30px;
-		width : 150px;
-		border-radius : 5px;
+	height: 30px;
+	width: 150px;
+	border-radius: 5px;
 }
 
 table {
-       margin-left: auto;
-       margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 a {
-	   text-decoration : none;
-	   font-size : 18px;
-	   padding-right: 30px;   
+	text-decoration: none;
+	font-size: 18px;
+	padding-right: 30px;
 }
 
 #heading {
-	   height : 20px;
-	   padding-right : 30px;
-	   padding-bottom : 20px;
-	   font-size : 25px;
+	height: 20px;
+	padding-right: 30px;
+	padding-bottom: 20px;
+	font-size: 25px;
 }
 
 #row {
-	   height: 15px;
-	   padding-right : 20px;
-	   padding-bottom : 10px;
-	   font-size : 20px;
-	   font-style: italic;
+	height: 15px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	font-size: 20px;
+	font-style: italic;
 }
 
-#tab a{
-    background: #4691A4;
-    padding: 8px 15px 8px 15px;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 40px;
-    text-decoration: none;
-    font-weight: bold;
+#tab a {
+	background: #4691A4;
+	padding: 8px 15px 8px 15px;
+	color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 40px;
+	text-decoration: none;
+	font-weight: bold;
 }
 
-#tab a:hover, #backButton{
-    background: #4691A4;
-    box-shadow: 0 5px #999;
-    transition: 0.5s;
+#tab a:hover, #backButton {
+	background: #4691A4;
+	box-shadow: 0 5px #999;
+	transition: 0.5s;
 }
 
-#tab a:active, #backButton{
-    background: #4691A4;
-    box-shadow: 0 3px #111;
+#tab a:active, #backButton {
+	background: #4691A4;
+	box-shadow: 0 3px #111;
 }
+
 #tab td {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
 
-#updateTab a, #openTab a{
+#updateTab a, #openTab a {
 	background: #51637f;
-    padding: 5px 20px 5px 20px;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 40px;
-    text-decoration: none;
-    font-weight: bold;
+	padding: 5px 20px 5px 20px;
+	color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 40px;
+	text-decoration: none;
+	font-weight: bold;
 }

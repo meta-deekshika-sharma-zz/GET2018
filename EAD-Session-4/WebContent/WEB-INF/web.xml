@@ -13,7 +13,7 @@
   </servlet>
   <filter>
     <filter-name>LoginFilter</filter-name>
-    <filter-class>com.Filter.LoginFilter</filter-class>
+    <filter-class>com.Filter.ProfileFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>LoginFilter</filter-name>
