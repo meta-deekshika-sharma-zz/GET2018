@@ -34,8 +34,7 @@ public class ProfileFilter implements Filter {
 		HttpServletResponse res = (HttpServletResponse) response;
 		String email = (String) req.getAttribute("email");
 		String password = (String) req.getAttribute("password");
-		
-        System.out.println(email + password);
+	
 		PrintWriter out = response.getWriter();
 
 		if (JDBCQuery.validateUser(email, password)) {
