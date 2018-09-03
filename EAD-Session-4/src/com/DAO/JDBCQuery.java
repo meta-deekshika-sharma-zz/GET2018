@@ -28,8 +28,8 @@ public class JDBCQuery {
 			statement.setString(5, user.getPassword());
 			statement.setString(6, user.getContactNumber());
 			statement.setString(7, user.getOrganization());
-            statement.setString(8, user.getImagePath());  
-            System.out.println(user.getImagePath());
+                        statement.setString(8, user.getImagePath());  
+                        System.out.println(user.getImagePath());
 			
 			return statement.executeUpdate();
 
