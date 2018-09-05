@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd">
+   
+   <bean id = "collectionInjection" class = "com.metacube.training.CollectionInjection">
+   
+   <property name="userList">
+       <list>
+           <value>Deekshika</value>
+           <value>Rachna</value>
+           <value>Bhavika</value>
+           <value>Prakalpa</value>
+           <value>Arjita</value>
+       </list>
+   </property>
+   
+   <property name="userSet">
+       <set>
+           <value>Deekshika</value>
+           <value>Rachna</value>
+           <value>Bhavika</value>
+           <value>Prakalpa</value>
+           <value>Arjita</value>
+       </set>
+   </property>
+   
+   <property name="userMap">
+       <map>
+           <entry key = "1" value = "Deekshika" />
+           <entry key = "2" value = "Rachna" />
+           <entry key = "3" value = "Bhavika" />
+           <entry key = "4" value = "Prakalpa" />
+           <entry key = "5" value = "Arjita" />
+       </map>
+   </property>
+   
+   </bean>
+</beans>
