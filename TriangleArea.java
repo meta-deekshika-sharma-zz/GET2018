@@ -1,12 +1,11 @@
-/**
- * TriangleArea.java
- *
- * This file was auto-generated from WSDL
- * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
- */
-
 package com.area;
 
-public interface TriangleArea extends java.rmi.Remote {
-    public double triangleArea(int side1, int side2, int side3) throws java.rmi.RemoteException;
+public class TriangleArea {
+
+	public double triangleArea(int side1, int side2, int side3) {
+		double side = (side1 + side2 + side3) / 2;
+
+		return Math.sqrt(side * (side - side1) * (side - side2)
+				* (side - side3));
+	}
 }
