@@ -1,5 +1,8 @@
 package com.area;
 
+/**
+*This class is used to calculate the area of the triangle
+*/
 public class TriangleArea {
 
 	public double triangleArea(int side1, int side2, int side3) {
