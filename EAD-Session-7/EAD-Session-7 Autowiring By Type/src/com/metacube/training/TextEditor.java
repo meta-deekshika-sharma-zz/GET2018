@@ -18,6 +18,6 @@ public class TextEditor {
 	}
 
 	public void checkSpelling() {
-		System.out.println(getSpellChecker() + "  Text Editor");
+		System.out.println(getSpellChecker().getStatus() + " Spell Checker");
 	}
 }

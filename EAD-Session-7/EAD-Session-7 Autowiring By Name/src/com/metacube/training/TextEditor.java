@@ -13,11 +13,11 @@ public class TextEditor {
 		return spellChecker;
 	}
 
-	public void setSpellchecker(SpellChecker spellChecker) {
+	public void setSpellChecker(SpellChecker spellChecker) {
 		this.spellChecker = spellChecker;
 	}
 
 	public void checkSpelling() {
-		System.out.println(getSpellChecker() + "  Text Editor");
+		System.out.println(getSpellChecker().getStatus() + " Spell Checker");
 	}
 }

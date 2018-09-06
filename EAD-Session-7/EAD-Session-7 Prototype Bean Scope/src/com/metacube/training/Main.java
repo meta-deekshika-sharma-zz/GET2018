@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * This main class will apply the prototype bean scop for objects
+ * This main class will apply the prototype bean scope for objects
  * @author Deekshika Sharma
  *
  */

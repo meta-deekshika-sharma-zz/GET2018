@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * Main class for using autowiring by constructor
+ * Main class for using autowiring by name
  * @author Deekshika Sharma
  *
  */
