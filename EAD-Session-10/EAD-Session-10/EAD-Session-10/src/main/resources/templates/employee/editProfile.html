@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Profile</title>
+</head>
+<body>
+	<h1>Edit Profile</h1>
+
+	<form action="editProfile" method="post">
+		<table>
+		    <tr>
+				<td><input type="hidden" name="code" th:value = "${employee.code}"></td>
+			</tr>
+			<tr>
+				<td>First Name:</td>
+				<td><input type="text" name="fname" th:value = "${employee.firstName}"></td>
+			</tr>
+			<tr>
+				<td>Middle Name:</td>
+				<td><input type="text" name="mname" th:value = "${employee.MiddleName}"></td>
+			</tr>
+			<tr>
+				<td>Last Name:</td>
+				<td><input type="text" name="lname" th:value = "${employee.lastName}"></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="email" name="email" th:value = "${employee.emailId}"></td>
+			</tr>
+			<tr>
+				<td>Date Of Birth:</td>
+				<td><input type="date" name="dob" th:value = "${employee.dob}"></td>
+			</tr>
+			<tr>
+				<td>Gender:</td>
+				<td><input type="radio" name="gender" value="male"> Male</td>
+				<td><input type="radio" name="gender" value="female"> Female</td>
+				<td><input type="radio" name="gender" value="other"> Other</td>
+			</tr>
+		
+	        <tr>
+				<td>Skype Id:</td>
+				<td><input type="text" name="skype" th:value = "${employee.skypeId}"></td>
+			</tr>
+			
+			<tr>
+				<td>Primary Contact No:</td>
+				<td><input type="text" name="primaryContactNo" th:value = "${employee.primaryContactNo}"></td>
+			</tr>
+			
+			<tr>
+				<td>Secondary Contact No:</td>
+				<td><input type="text" name="secondaryContactNo" th:value = "${employee.secondaryContactNo}"></td>
+			</tr>
+			
+			<tr>
+				<td>Password:</td>
+				<td><input type="text" name="password" th:value = "${employee.password}"></td>
+			</tr>
+		    <tr>
+				<td>Skills</td>
+				<td>
+				    <select name = "skill" multiple="multiple">
+				    <option value = "null">N/A</option>
+				    <option th:each="skill : ${skills}" th:value="${skill.name}"
+							th:text="${skill.name}">ProjectId</option>
+				    </select>
+				</td>
+			</tr>
+			
+		    <tr>
+		        <td><input type = "submit" value = "Update"></td>
+		    </tr>
+			</table>	
+	</form>
+</body>
+</html>
