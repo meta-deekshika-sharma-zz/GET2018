@@ -156,6 +156,23 @@ public class AdminController {
 		return "admin/addEmployee";
 	}
 
+	/**
+	 * Methods used for pre sign up of employees
+	 * @param firstName
+	 * @param middleName
+	 * @param lastName
+	 * @param email
+	 * @param dob
+	 * @param gender
+	 * @param doj
+	 * @param totalExp
+	 * @param jobCode
+	 * @param reportingMgr
+	 * @param teamLead
+	 * @param projectId
+	 * @return
+	 * @throws ParseException
+	 */
 	@RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
 	public ModelAndView addEmployee(@RequestParam("fname") String firstName,
 			@RequestParam("mname") String middleName,
@@ -215,6 +232,12 @@ public class AdminController {
 		return "admin/searchEmployee";
 	}
 
+	/**
+	 * Method used for searching employees based on parameters
+	 * @param search
+	 * @param select
+	 * @return
+	 */
 	@RequestMapping(value = "/searchEmployee", method = RequestMethod.POST)
 	public ModelAndView searchEmployee(@RequestParam("search") String search,
 			@RequestParam("select") String select) {

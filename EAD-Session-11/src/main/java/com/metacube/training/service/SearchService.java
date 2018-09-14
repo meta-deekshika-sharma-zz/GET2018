@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.metacube.training.dao.SearchDAO;
 import com.metacube.training.model.Employee;
+import com.metacube.training.model.Skill;
 
 /**
  * @author Deekshika Sharma

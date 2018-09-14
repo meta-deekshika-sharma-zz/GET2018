@@ -1,16 +1,8 @@
 package com.metacube.training.dao;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.Date;
 import java.util.List;
-
-import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,27 +16,25 @@ import com.metacube.training.model.PreSignUp;
 @Transactional
 public class PreSignUpDAO implements AdminDAO<PreSignUp> {
 
-	private JdbcTemplate jdbcTemplate;
-	
 	@Autowired
 	private SessionFactory sessionFactory;
-	
-	@Autowired
-	public PreSignUpDAO(DataSource dataSource) {
-		jdbcTemplate = new JdbcTemplate(dataSource);
-	}
 	
 	@Override
 	public int createField(PreSignUp preSignUp) {
 		
 		String[] result = preSignUp.getEmailId().split("@");
-		jdbcTemplate.update(PreSignUpQuery.INSERT_EMPLOYEE, result[0], preSignUp.getFirstName(), preSignUp.getMiddleName(),
-				preSignUp.getLastName(), new java.sql.Date(preSignUp.getDob().getTime()), preSignUp.getGender(), preSignUp.getEmailId(),"123456");
-				
-        return jdbcTemplate.update(PreSignUpQuery.INSERT_JOB_DETAIL, result[0], new java.sql.Date(preSignUp.getDoj().getTime()), preSignUp.getTotalExp(),
-        		preSignUp.getJobCode(), preSignUp.getReportinhMgr(), preSignUp.getTeamLead(), preSignUp.getProjectId());
+		System.out.println(result[0]);
+		preSignUp.setCode(result[0]);
+		preSignUp.setPassword("123456");
+		try {
+			
+			return (Integer) sessionFactory.getCurrentSession().save(preSignUp);
+		} catch(Exception e)
+		{
+			return 0;
+		}
 	}
-
+	
 	@Override
 	public int updateField(PreSignUp t) {
 		// TODO Auto-generated method stub

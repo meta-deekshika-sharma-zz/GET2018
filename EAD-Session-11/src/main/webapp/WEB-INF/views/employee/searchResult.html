@@ -15,9 +15,9 @@
 			<td>Last Name</td>
 			<td>DOB</td>
 			<td>Email</td>
-			<!-- <td>Skype Id</td>
+			<td>Skype Id</td>
 			<td>Primary Contact no.</td>
-			<td>Secondary Contact No.</td> -->
+			<td>Secondary Contact No.</td>
 		</tr>
 
 		<tr th:each="employee : ${employees}">
@@ -27,9 +27,9 @@
 			<td th:text="${employee.lastName}"></td>
 			<td th:text="${employee.dob}"></td>
 			<td th:text="${employee.emailId}"></td>
-			<!-- <td th:text="${employee.skypeId}"></td> -->
-			<!-- <td th:text="${employee.primaryContactNo}"></td>
-			<td th:text="${employee.secondaryContactNo}"></td> -->
+			<td th:text="${employee.skypeId}"></td>
+			<td th:text="${employee.primaryContactNo}"></td>
+			<td th:text="${employee.secondaryContactNo}"></td>
 		</tr>
 	</table>
 </body>

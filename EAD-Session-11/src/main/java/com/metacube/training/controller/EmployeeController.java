@@ -75,6 +75,21 @@ public class EmployeeController {
 		return new ModelAndView("employee/editProfile", "employee", employeeService.getFieldById(username));
 	}
 
+	/**
+	 * Method used to update the employee profile
+	 * @param code
+	 * @param fname
+	 * @param mname
+	 * @param lname
+	 * @param email
+	 * @param dob
+	 * @param skype
+	 * @param primaryContactNo
+	 * @param secondaryContactNo
+	 * @param password
+	 * @return
+	 * @throws ParseException
+	 */
 	@RequestMapping(value = "/editProfile", method = RequestMethod.POST)
 	public ModelAndView updateEmployee(@RequestParam("code") String code,
 			@RequestParam("fname") String fname,
@@ -130,6 +145,12 @@ public class EmployeeController {
 		return "employee/searchEmployee";
 	}
 
+	/**
+	 * Method used for searching employees based on parameters
+	 * @param search
+	 * @param select
+	 * @return
+	 */
 	@RequestMapping(value = "/searchEmployee", method = RequestMethod.POST)
 	public ModelAndView searchEmployee(@RequestParam("search") String search,
 			@RequestParam("select") String select) {

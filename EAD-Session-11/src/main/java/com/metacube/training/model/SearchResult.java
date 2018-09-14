@@ -3,8 +3,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SecondaryTable;
 import javax.persistence.Table;
@@ -16,7 +14,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name = "Employee")
 @SecondaryTable(name = "JobDetails")
-public class PreSignUp {
+public class SearchResult {
 
 	@Id
 	@Column(name = "emp_code", table = "Employee", nullable = false)
@@ -33,6 +31,18 @@ public class PreSignUp {
 	
 	@Column(name = "gender", table = "Employee")
 	private String gender;
+	
+	@Column(name = "primary_contact_no", table = "Employee")
+	private String primaryContactNo;
+	
+	@Column(name = "secondary_contact_no", table = "Employee")
+	private String secondaryContactNo;
+	
+	@Column(name = "skype_id", table = "Employee")
+	private String skypeId;
+	
+	@Column(name = "enabled", table = "Employee")
+	private boolean enabled;
 	
 	@Column(name = "email_id", table = "Employee")
 	private String emailId;
@@ -158,4 +168,29 @@ public class PreSignUp {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getPrimaryContactNo() {
+		return primaryContactNo;
+	}
+	public void setPrimaryContactNo(String primaryContactNo) {
+		this.primaryContactNo = primaryContactNo;
+	}
+	public String getSecondaryContactNo() {
+		return secondaryContactNo;
+	}
+	public void setSecondaryContactNo(String secondaryContactNo) {
+		this.secondaryContactNo = secondaryContactNo;
+	}
+	public String getSkypeId() {
+		return skypeId;
+	}
+	public void setSkypeId(String skypeId) {
+		this.skypeId = skypeId;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+	
 }
