@@ -24,8 +24,8 @@ public class ProjectService implements AdminService<Project>{
 		System.out.println(project);
 		if(project == null)
 			return 0;
-//        if(project.getStartDate().after(project.getEndDate()))
-//        	return 0;
+        if(project.getStartDate().after(project.getEndDate()))
+        	return 0;
         System.out.println("pp");
 		return projectDAO.createField(project);
 	}
