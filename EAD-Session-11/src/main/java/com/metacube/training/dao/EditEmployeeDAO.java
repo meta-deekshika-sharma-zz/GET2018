@@ -10,7 +10,6 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.metacube.training.mapper.EmployeeMapper;
 import com.metacube.training.model.Employee;
 
 /**

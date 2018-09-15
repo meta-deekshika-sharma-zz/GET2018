@@ -10,5 +10,5 @@ public interface JobQuery {
 
 	String GET_JOB_LIST = "FROM Job";
 
-	String GET_JOB_BY_ID = "FROM JobTitleMaster WHERE code = :job_code";
+	String GET_JOB_BY_ID = "FROM Job WHERE code = :job_code";
 }

@@ -4,9 +4,9 @@ public interface SearchQuery {
 
 	String SEARCH_BY_NAME = "FROM Employee WHERE emp_code = :emp_code";
 	
-	String SEARCH_BY_PROJECT = "FROM SearchResult WHERE curr_project_id = :id";
+	String SEARCH_BY_PROJECT = "SELECT e FROM JobDetails j INNER JOIN j.employeeCode e INNER JOIN j.projectId p WHERE p.id = :id";
 	
-	String SEARCH_BY_SKILL = "FROM EmployeeSkill WHERE skill_id = :id";
+	String SEARCH_BY_SKILL = "SELECT e FROM EmployeeSkill es INNER JOIN es.employee e INNER JOIN es.skill s WHERE s.id = :id";
 	
-	String SEARCH_BY_TOTAL_EXP = "FROM SearchResult WHERE total_exp = :total_exp";
+	String SEARCH_BY_TOTAL_EXP = "SELECT e FROM JobDetails j INNER JOIN j.employeeCode e WHERE j.totalExperience = :total_exp";
 }

@@ -18,7 +18,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.metacube.training.mapper.JobMapper;
 import com.metacube.training.model.Employee;
 import com.metacube.training.model.Job;
 
@@ -72,10 +71,8 @@ public class JobDAO implements AdminDAO<Job> {
         return query.getResultList();
 	}
 
-	@Override
-	public Job getFieldById(String id) {
+	public Job getJobById(Integer id) {
 
-		int resultId = Integer.parseInt(id);
 		try
         {
             TypedQuery<Job> query = sessionFactory.getCurrentSession()
@@ -86,5 +83,11 @@ public class JobDAO implements AdminDAO<Job> {
         {
             return null;
         }
+	}
+
+	@Override
+	public Job getFieldById(String id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

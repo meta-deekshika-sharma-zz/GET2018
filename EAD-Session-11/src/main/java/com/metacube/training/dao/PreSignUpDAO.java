@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.metacube.training.model.Employee;
+import com.metacube.training.model.JobDetails;
 import com.metacube.training.model.PreSignUp;
 
 /**
@@ -14,49 +16,22 @@ import com.metacube.training.model.PreSignUp;
  */
 @Repository
 @Transactional
-public class PreSignUpDAO implements AdminDAO<PreSignUp> {
+public class PreSignUpDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	@Override
-	public int createField(PreSignUp preSignUp) {
-		
-		String[] result = preSignUp.getEmailId().split("@");
-		System.out.println(result[0]);
-		preSignUp.setCode(result[0]);
-		preSignUp.setPassword("123456");
+	public int createField(Employee employee, JobDetails jobDetails) {
+
 		try {
 			
-			return (Integer) sessionFactory.getCurrentSession().save(preSignUp);
+			sessionFactory.getCurrentSession().save(employee);
+			sessionFactory.getCurrentSession().save(jobDetails);
+			return 1;
 		} catch(Exception e)
 		{
 			return 0;
 		}
-	}
-	
-	@Override
-	public int updateField(PreSignUp t) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int deleteField(String id) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public List<PreSignUp> getField() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public PreSignUp getFieldById(String id) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

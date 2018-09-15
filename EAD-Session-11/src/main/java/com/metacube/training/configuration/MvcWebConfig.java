@@ -25,9 +25,9 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import com.metacube.training.model.Employee;
 import com.metacube.training.model.EmployeeSkill;
 import com.metacube.training.model.Job;
+import com.metacube.training.model.JobDetails;
 import com.metacube.training.model.PreSignUp;
 import com.metacube.training.model.Project;
-import com.metacube.training.model.SearchResult;
 import com.metacube.training.model.Skill;
 
 @Configuration
@@ -95,7 +95,8 @@ public class MvcWebConfig implements WebMvcConfigurer {
 	    props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
 
 	    factoryBean.setHibernateProperties(props);
-	    factoryBean.setAnnotatedClasses(Employee.class, Job.class, Skill.class, Project.class, PreSignUp.class, SearchResult.class, EmployeeSkill.class);
+	    factoryBean.setAnnotatedClasses(Employee.class, Job.class, Skill.class, Project.class, JobDetails.class, EmployeeSkill.class);
+	    
 	    
 	    return factoryBean;
 	  }
