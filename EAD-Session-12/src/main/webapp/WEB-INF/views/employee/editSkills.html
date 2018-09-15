@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <form action="editSkills" method = "post">
+     <table>
+            <tr>
+                <td><input type="hidden" name="code" th:value = "${id}"></td>
+            </tr>
+            <tr>
+				<td>Skills</td>
+				<td>
+				    <select name = "skill" multiple="multiple">
+				    <option value = "null">N/A</option>
+				    <option th:each="skill : ${skills}" th:value="${skill.name}"
+							th:text="${skill.name}">ProjectId</option>
+				    </select>
+				</td>
+			</tr>
+			
+			<tr>
+			    <td><input type = "submit" value = "Add"/></td>
+			</tr>
+     </table>
+ </form>
+
+</body>
+</html>
