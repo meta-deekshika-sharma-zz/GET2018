@@ -13,26 +13,26 @@ import com.metacube.training.repository.ProjectRepository;
  * This class will have implementation for Project service 
  */
 @Service
-public class ProjectService implements AdminService<Project>{
+public class ProjectService implements ProjectServiceInterface{
 
 	@Autowired
 	ProjectRepository<Project> projectRepository;
 	
 	@Override
-	public int addField(Project project) {
+	public int addProject(Project project) {
 		projectRepository.save(project);
 		return 1;
 	}
 
 	@Override
-	public int updateField(Project project) {
+	public int updateProject(Project project) {
         
 		projectRepository.saveAndFlush(project);
 		return 0;
 	}
 
 	@Override
-	public int deleteField(String id) {
+	public int deleteProject(int id) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -43,8 +43,7 @@ public class ProjectService implements AdminService<Project>{
 	}
 
 	@Override
-	public Project getFieldById(String id) {
-		Integer idd = Integer.parseInt(id);
-		return projectRepository.findOne(idd);
+	public Project getProjectById(int id) {
+		return projectRepository.findOne(id);
 	}
 }

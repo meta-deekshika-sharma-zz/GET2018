@@ -15,38 +15,35 @@ import com.metacube.training.repository.JobTitleRepository;
  * This class will have implementation for job
  */
 @Service
-public class JobService implements AdminService<Job> {
+public class JobService implements JobServiceInterface {
 
 	@Autowired
 	private JobTitleRepository<Job> jobTitleRepository;
 
-	@Override
-	public int addField(Job job) {
-
-		jobTitleRepository.save(job);
-		return 1;
+	public Job getJobTitleById(int id) {
+		return jobTitleRepository.findOne(id);
 	}
 
 	@Override
-	public int updateField(Job job) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int deleteField(String id) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public List<Job> retreive() {
+	public List<Job> getAllJobTitles() {
 		return jobTitleRepository.findAll();
 	}
 
 	@Override
-	public Job getFieldById(String id) {
+	public boolean deleteJobTitle(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return false;
+	}
+
+	@Override
+	public boolean updateJobTitle(Job job) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean createJobTitle(Job job) {
+		jobTitleRepository.save(job);
+		return true;
 	}
 }

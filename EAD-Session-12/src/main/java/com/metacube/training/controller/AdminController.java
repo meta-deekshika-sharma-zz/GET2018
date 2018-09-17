@@ -23,10 +23,12 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import com.metacube.training.model.Employee;
 import com.metacube.training.model.Job;
+import com.metacube.training.model.PreSignUp;
 import com.metacube.training.model.Project;
 import com.metacube.training.model.Skill;
 import com.metacube.training.service.AdminService;
 import com.metacube.training.service.EmployeeService;
+import com.metacube.training.service.JobDetailsService;
 import com.metacube.training.service.JobService;
 import com.metacube.training.service.ProjectService;
 import com.metacube.training.service.SkillService;
@@ -51,10 +53,8 @@ public class AdminController {
 	@Autowired
 	EmployeeService employeeService;
 
-//	@Autowired
-//	PreSignUpService preSignUpService;
-//	@Autowired
-//	SearchService searchService;
+	@Autowired
+	JobDetailsService jobDetailService;
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
@@ -106,7 +106,7 @@ public class AdminController {
 
 		project.setStartDate(staDate);
 		project.setEndDate(eDate);
-		if (projectService.addField(project) == 0)
+		if (projectService.addProject(project) == 0)
 			return new ModelAndView("admin/project");
 
 		return new ModelAndView("admin/dashboard");
@@ -136,17 +136,15 @@ public class AdminController {
 	@RequestMapping(path = "job", method = RequestMethod.POST)
 	public String addJobTitle(@ModelAttribute("job") Job job) {
 
-		jobService.retreive();
-		System.out.println(job.getTitle());
-		jobService.addField(job);
+		jobService.createJobTitle(job);
 		return "redirect:/admin/dashboard";
 	}
 
 	@RequestMapping(value = "/addEmployee", method = RequestMethod.GET)
 	public String addEmployee(Model model) {
 		model.addAttribute("employee", new Employee());
-		model.addAttribute("jobCode", jobService.retreive());
-		model.addAttribute("leaders", employeeService.retreive());
+		model.addAttribute("jobCode", jobService.getAllJobTitles());
+		model.addAttribute("leaders", employeeService.getEmployeeList());
 		model.addAttribute("projects", projectService.retreive());
 		return "admin/addEmployee";
 	}
@@ -168,59 +166,59 @@ public class AdminController {
 	 * @return
 	 * @throws ParseException
 	 */
-//	@RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
-//	public ModelAndView addEmployee(@RequestParam("fname") String firstName,
-//			@RequestParam("mname") String middleName,
-//			@RequestParam("lname") String lastName,
-//			@RequestParam("email") String email,
-//			@RequestParam("dob") String dob,
-//			@RequestParam("gender") String gender,
-//			@RequestParam("doj") String doj,
-//			@RequestParam("totalExp") String totalExp,
-//			@RequestParam("jobCode") Integer jobCode,
-//			@RequestParam("reportingMgr") String reportingMgr,
-//			@RequestParam("teamLead") String teamLead,
-//			@RequestParam("projectId") Integer projectId) throws ParseException {
-//
-//		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//		Date dobDate = simpleDateFormat.parse(dob);
-//		Date dojDate = simpleDateFormat.parse(doj);
-//		System.out.println("add Employee");
-//		Double n = Double.parseDouble(totalExp);
-//
-//		Employee preSignUp = new PreSignUp();
-//		preSignUp.setFirstName(firstName);
-//		preSignUp.setMiddleName(middleName);
-//		preSignUp.setLastName(lastName);
-//		preSignUp.setEmailId(email);
-//		preSignUp.setDob(dobDate);
-//		preSignUp.setDoj(dojDate);
-//		preSignUp.setGender(gender);
-//
-//		if (reportingMgr.equals("null"))
-//			preSignUp.setReportinhMgr(null);
-//		else
-//			preSignUp.setReportinhMgr(reportingMgr);
-//
-//		if (teamLead.equals("null"))
-//			preSignUp.setTeamLead(null);
-//		else
-//			preSignUp.setTeamLead(teamLead);
-//
-//		if (projectId == null)
-//			preSignUp.setProjectId(null);
-//		else
-//			preSignUp.setProjectId(projectId);
-//		preSignUp.setTotalExp(n);
-//
-//		if (jobCode == null)
-//			preSignUp.setJobCode(null);
-//		else
-//			preSignUp.setJobCode(jobCode);
-//
-//		preSignUpService.addField(preSignUp);
-//		return new ModelAndView("admin/dashboard");
-//	}
+	@RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
+	public ModelAndView addEmployee(@RequestParam("fname") String firstName,
+			@RequestParam("mname") String middleName,
+			@RequestParam("lname") String lastName,
+			@RequestParam("email") String email,
+			@RequestParam("dob") String dob,
+			@RequestParam("gender") String gender,
+			@RequestParam("doj") String doj,
+			@RequestParam("totalExp") String totalExp,
+			@RequestParam("jobCode") Integer jobCode,
+			@RequestParam("reportingMgr") String reportingMgr,
+			@RequestParam("teamLead") String teamLead,
+			@RequestParam("projectId") Integer projectId) throws ParseException {
+
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date dobDate = simpleDateFormat.parse(dob);
+		Date dojDate = simpleDateFormat.parse(doj);
+		System.out.println("add Employee");
+		Double n = Double.parseDouble(totalExp);
+
+		PreSignUp preSignUp = new PreSignUp();
+		preSignUp.setFirstName(firstName);
+		preSignUp.setMiddleName(middleName);
+		preSignUp.setLastName(lastName);
+		preSignUp.setEmailId(email);
+		preSignUp.setDob(dobDate);
+		preSignUp.setDoj(dojDate);
+		preSignUp.setGender(gender);
+
+		if (reportingMgr.equals("null"))
+			preSignUp.setReportinhMgr(null);
+		else
+			preSignUp.setReportinhMgr(reportingMgr);
+
+		if (teamLead.equals("null"))
+			preSignUp.setTeamLead(null);
+		else
+			preSignUp.setTeamLead(teamLead);
+
+		if (projectId == null)
+			preSignUp.setProjectId(null);
+		else
+			preSignUp.setProjectId(projectId);
+		preSignUp.setTotalExp(n);
+
+		if (jobCode == null)
+			preSignUp.setJobCode(null);
+		else
+			preSignUp.setJobCode(jobCode);
+
+		employeeService.addEmployee(preSignUp);
+		return new ModelAndView("admin/dashboard");
+	}
 
 	@RequestMapping(value = "/searchEmployee", method = RequestMethod.GET)
 	public String searchEmployee() {
@@ -233,26 +231,15 @@ public class AdminController {
 	 * @param select
 	 * @return
 	 */
-//	@RequestMapping(value = "/searchEmployee", method = RequestMethod.POST)
-//	public ModelAndView searchEmployee(@RequestParam("search") String search,
-//			@RequestParam("select") String select) {
-//
-//		List<Employee> employees = new ArrayList<Employee>();
-//		if ("name".equals(select)) {
-//			employees = searchService.searchByName(search);
-//		} else if ("project".equals(select)) {
-//			int project_id = Integer.parseInt(search);
-//			employees = searchService.searchByProject(project_id);
-//		} else if ("skill".equals(select)) {
-//			int skill_id = Integer.parseInt(search);
-//			employees = searchService.searchBySkill(skill_id);
-//		} else {
-//			double total_exp = Double.parseDouble(search);
-//			employees = searchService.searchByTotalExperience(total_exp);
-//		}
-//
-//		return new ModelAndView("admin/searchResult", "employees", employees);
-//	}
+	@RequestMapping(value = "/searchEmployee", method = RequestMethod.POST)
+	public ModelAndView searchEmployee(@RequestParam("search") String search,
+			@RequestParam("select") String select) {
+
+		List<Employee> employees = new ArrayList<Employee>();
+		
+		employees = jobDetailService.searchEmployeeByProject(search);
+		return new ModelAndView("admin/searchResult", "employees", employees);
+	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public ModelAndView logout() {
@@ -263,7 +250,7 @@ public class AdminController {
 	@RequestMapping(value = "/updateEmployee", method = RequestMethod.GET)
 	public ModelAndView update(@RequestParam("id") String emp_code) {
 
-		Employee employee = employeeService.getFieldById(emp_code);
+		Employee employee = employeeService.getEmployeeByCode(emp_code);
 
 		return new ModelAndView("admin/UpdateEmployee", "employee", employee);
 	}
@@ -272,7 +259,7 @@ public class AdminController {
 	public String updateEmployee(@ModelAttribute("employee") Employee employee) {
 
 		System.out.println(employee.getCode() + employee.getEmailId());
-		employeeService.updateField(employee);
+		employeeService.updateEmployee(employee);
 		// System.out.println("updated");
 		return "admin/dashboard";
 	}
@@ -280,7 +267,9 @@ public class AdminController {
 	@RequestMapping(value = "/deleteEmployee", method = RequestMethod.GET)
 	public ModelAndView delete(@RequestParam("id") String emp_code) {
 
-		employeeService.deleteField(emp_code);
+		Employee employee = new Employee();
+		employee = employeeService.getEmployeeByCode(emp_code);
+		employeeService.deleteEmployee(employee);
 		return new ModelAndView("admin/dashboard");
 	}
 }
