@@ -1,0 +1,252 @@
+#header {
+    background-image: url(images/homebg.png);
+}
+
+#headerLogo {
+    margin-left: 10%;
+    padding-top: 40px;
+    width: 30px;
+    display: inline-block;
+}
+
+#menu li{
+    display: inline;
+    padding-left: 20px;
+    font-size: 20px;   
+}
+
+#link li {
+    display: inline;
+}
+
+.link-images {
+    height: 20px;
+}
+
+#headerMenu {
+    margin-left: 20%;
+    padding-top: 10px;
+    display: inline-block;
+    color: aliceblue;
+}
+
+#headerLink {
+    margin-left: 10%;
+    padding-top: 10px;
+    display: inline-block;
+    color: aliceblue;
+}
+
+#coverHead h1 {
+    color: #fff;
+    font-size: 50px;
+    padding-bottom: 40px;
+}
+
+#headerImg {
+    width: 60%;
+    margin-right: 100px;
+}
+
+a {
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+#downloads {
+    margin-right: 20px;
+    padding: 15px 25px 15px 25px;
+    background: #f9682a;
+    color: #fff;
+}
+
+#features {
+    padding: 15px 25px 15px 25px;
+    background: #1440ad;
+    color: #fff;
+}
+
+#cover {
+    background-image: url(images/homebg.png);
+    background-size: cover;
+    padding-bottom: 20px;
+}
+
+#coverHead {
+    padding-top: 100px;
+    float: left;
+    margin-left: 10%;
+    width: 40%;
+}
+
+#coverImg {
+    padding-top: 120px;
+    width: 40%;
+    display: inline-block;
+}
+
+.content-header {
+    margin-top: 10%;
+}
+
+.content-header h1{
+    color: #83acef;
+    text-align: center;
+}
+
+.sub-heading {
+    color: #c1c4c9;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.perfect-feature-images {
+    margin-left: 10%;
+    float: left;
+}
+
+#usability {
+    width: 30%;
+    float: left;
+}
+
+#parallaxEffect, #unlimitesColors {
+    width: 30%;
+    display: inline-block;
+}
+
+#perfectFeature h2 {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.perfect-feature-text {
+    margin-left: 37%;
+    margin-top: -2px;
+    color: #c1c4c9;
+}
+
+#perfectFeatureImg {
+    margin-left: 15%;
+}
+
+.screenshots-block {
+    margin-top: 10%;
+}
+
+.screnshots-images {    
+    width: 80%;
+    margin-left: 100px;
+}
+
+#screenshotImg1, #screenshotImg2, #screenshotImg3 {
+    display: inline-block;
+    width: 30%;
+}
+
+#screenshot1, #screenshot3 {
+     width: 40%;
+     margin-top: 10%;
+     float: right;
+     margin-right: 10%;
+}
+
+#screenshot2 {
+     width: 40%;
+     margin-top: 10%;
+     float: left;
+     margin-left: 10%;
+}
+
+.screenshots-para { 
+    width: 80%;
+    color: #75777a;
+}
+
+#review1, #review3, #review2, #review4{
+    margin-top: 10%;
+    display: inline-block;
+    margin-left: 10%;
+    width: 35%;
+}
+
+.review-text {
+    width: 80%;
+}
+
+.review-writer {
+    width: 40%;
+}
+
+#downloadApp {
+    background-image: url(images/homebg.png);
+    margin-top: 10%;
+}
+
+#downloadText {
+    margin-left: 10%;
+    float: left;
+    width: 40%;
+}
+
+#downloadText h1 {
+    color: #fff;
+    padding-top: 100px;
+}
+
+#downloadPara {
+    color: #fff;
+    padding-top: 50px;
+    width: 80%;
+}
+
+.play-store-image {
+    padding-top: 50px;
+    padding-right: 10px;
+}
+
+#downloadImg {
+     display: inline-block;
+     width: 30%;
+     margin-top: 10%;
+     margin-left: 100px;
+}
+
+#footer {
+    background-color: #2f2f4f;
+}
+
+#footerLogo {
+    margin-left: 10%;
+    padding-top: 40px;
+    width: 30px;
+    display: inline-block;
+}
+
+#footerMenu {
+    color: #bbbbc9;
+    margin-left: 20%;
+    padding-top: 10px;
+    display: inline-block;
+}
+
+#footerLink {
+    color: #bbbbc9;
+    margin-left: 10%;
+    padding-top: 10px;
+    display: inline-block;
+}
+
+#allRight {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    color: #5e5e6d;
+    padding-left: 50%;
+}
+
+#backgroundImg {
+    margin-left: 10%;
+    padding-right: 30%;
+    width: 100%;
+    box-sizing: border-box;
+}
