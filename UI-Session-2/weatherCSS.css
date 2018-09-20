@@ -31,7 +31,7 @@
 }
 
 #headerLink {
-    margin-left: 10%;
+    margin-left: 25%;
     padding-top: 10px;
     display: inline-block;
     color: aliceblue;
@@ -86,7 +86,7 @@ a {
 }
 
 .content-header {
-    margin-top: 10%;
+    margin-top: 100px;
 }
 
 .content-header h1{
@@ -106,12 +106,12 @@ a {
 }
 
 #usability {
-    width: 30%;
+    width: 33%;
     float: left;
 }
 
 #parallaxEffect, #unlimitesColors {
-    width: 30%;
+    width: 33%;
     display: inline-block;
 }
 
@@ -121,17 +121,18 @@ a {
 }
 
 .perfect-feature-text {
-    margin-left: 37%;
+    margin-left: 30%;
     margin-top: -2px;
     color: #c1c4c9;
 }
 
 #perfectFeatureImg {
-    margin-left: 15%;
+    margin-left: 20%;
+    margin-top: 100px;
 }
 
 .screenshots-block {
-    margin-top: 10%;
+    margin-top: 100px;
 }
 
 .screnshots-images {    
@@ -139,23 +140,30 @@ a {
     margin-left: 100px;
 }
 
-#screenshotImg1, #screenshotImg2, #screenshotImg3 {
+#screenshotImg1, #screenshotImg3 {
     display: inline-block;
-    width: 30%;
+    width: 25%;
+    margin-left: 100px;
+}
+
+#screenshotImg2 {
+    display: inline-block;
+    width: 25%;
+    margin-right: 100px;
 }
 
 #screenshot1, #screenshot3 {
      width: 40%;
-     margin-top: 10%;
+     margin-top: 100px;
      float: right;
      margin-right: 10%;
 }
 
 #screenshot2 {
      width: 40%;
-     margin-top: 10%;
+     margin-top: 100px;
      float: left;
-     margin-left: 10%;
+     margin-left: 15%;
 }
 
 .screenshots-para { 
@@ -164,18 +172,23 @@ a {
 }
 
 #review1, #review3, #review2, #review4{
-    margin-top: 10%;
+    margin-top: 100px;
     display: inline-block;
     margin-left: 10%;
     width: 35%;
 }
 
 .review-text {
-    width: 80%;
+    width: 70%;
+    font-size: 20px;
+    font-family: sans-serif;
+    text-shadow: 1px 1px 1px #d3d1d1;
 }
 
 .review-writer {
     width: 40%;
+    font-family: sans-serif;
+    text-shadow: 1px 1px 1px #d3d1d1;
 }
 
 #downloadApp {
@@ -197,11 +210,11 @@ a {
 #downloadPara {
     color: #fff;
     padding-top: 50px;
-    width: 80%;
+    width: 50%;
 }
 
 .play-store-image {
-    padding-top: 50px;
+    padding-top: 20px;
     padding-right: 10px;
 }
 
@@ -213,7 +226,7 @@ a {
 }
 
 #footer {
-    background-color: #2f2f4f;
+    background-color: #2f2f4f;   
 }
 
 #footerLogo {
@@ -232,7 +245,7 @@ a {
 
 #footerLink {
     color: #bbbbc9;
-    margin-left: 10%;
+    margin-left: 25%;
     padding-top: 10px;
     display: inline-block;
 }
@@ -245,8 +258,8 @@ a {
 }
 
 #backgroundImg {
-    margin-left: 10%;
-    padding-right: 30%;
+    padding-right: 10%;
+    margin-left: 5%;
     width: 100%;
     box-sizing: border-box;
 }
