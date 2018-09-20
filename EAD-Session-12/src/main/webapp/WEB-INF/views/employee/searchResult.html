@@ -1,0 +1,36 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Search Result</title>
+</head>
+<body>
+	<table border="1px">
+		<tr>
+			<td>Employee Code</td>
+			<td>First Name</td>
+			<td>Middle Name</td>
+			<td>Last Name</td>
+			<td>DOB</td>
+			<td>Email</td>
+			<td>Skype Id</td>
+			<td>Primary Contact no.</td>
+			<td>Secondary Contact No.</td>
+		</tr>
+
+		<tr th:each="employee : ${employees}">
+			<td th:text="${employee.code}"></td>
+			<td th:text="${employee.firstName}"></td>
+			<td th:text="${employee.middleName}"></td>
+			<td th:text="${employee.lastName}"></td>
+			<td th:text="${employee.dob}"></td>
+			<td th:text="${employee.emailId}"></td>
+			<td th:text="${employee.skypeId}"></td>
+			<td th:text="${employee.primaryContactNo}"></td>
+			<td th:text="${employee.secondaryContactNo}"></td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Project</title>
+</head>
+<body>
+    <h1>Add Project</h1>
+	<form action="projects" method="post">
+			<label>Description:</label>
+				<input type="text" name = "description" />
+			<br />
+			<label>Start Date :</label>
+				<input type="date" name = "startDate" />
+			<br />
+			<label>End Date:</label>
+				<input type="date" name = "endDate" />
+			<br />
+			<!-- <label>Project Logo:</label>
+				<input type="file" th:field="*{logo}" /> -->
+			<br />
+				<input type="submit" value="Submit" />
+
+	</form>
+</body>
+</html>
