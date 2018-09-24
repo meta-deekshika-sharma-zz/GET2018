@@ -6,8 +6,8 @@
 <title>Home</title>
 </head>
 <body>
-   	<h1>Title : ${title}</h1>	
-	<h2>Message : ${message}</h2>	
+   	<h1>${title}</h1>	
+	<h2>${message}</h2>	
 	
 	<c:if test="${pageContext.request.userPrincipal.name != null}">
 	    <h2>Welcome : ${pageContext.request.userPrincipal.name}</h2>
