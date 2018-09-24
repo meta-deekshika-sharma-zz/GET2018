@@ -7,7 +7,7 @@
 <title>Error</title>
 </head>
 <body>
-   	<h1>Title : ${title}</h1>	
-	<h2>Message : ${message}</h2>	
+   	<h1>${title}</h1>	
+	<h2>${message}</h2>	
 </body>
 </html>
