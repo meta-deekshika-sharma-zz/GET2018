@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Form</title>
+        <link rel="stylesheet" href="formCSS.css"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    </head>
+    
+    <body>
+        <div id="formBody">
+            <header>
+                <h1>Contact Us Today!</h1>
+            </header>
+            
+            
+            <form action="#">
+                <div id="form">
+                    <div id="formFieldsLabel">
+                        <div id="firstNameLabel" class="label">
+                            <label><strong>First Name</strong></label>
+                        </div>
+                
+                        <div id="lastNameLabel" class="label">
+                            <label><strong>Last Name</strong></label>
+                        </div>
+                
+                        <div id="emailLabel" class="label">
+                            <label><strong>E-Mail</strong></label>
+                        </div>
+                
+                        <div id="phoneLabel" class="label">
+                            <label><strong>Phone #</strong></label>
+                        </div>
+                
+                        <div id="addressLabel" class="label">
+                            <label><strong>Address</strong></label>
+                        </div>
+                
+                        <div id="cityLabel" class="label">
+                            <label><strong>City</strong></label>
+                        </div>
+                
+                        <div id="stateLabel" class="label">
+                            <label><strong>State</strong></label>
+                        </div>
+                
+                        <div id="zipcodeLabel" class="label">
+                            <label><strong>Zip Code</strong></label>
+                        </div>
+                
+                        <div id="websiteLabel" class="label">
+                            <label><strong>Website or domain name</strong></label>
+                        </div>
+                
+                        <div id="hostingLabel" class="label">
+                            <label><strong>Do you have hosting?</strong></label>
+                        </div>
+                
+                        <div id="projectLabel" class="label">
+                            <label><strong>Project Description</strong></label>
+                        </div>
+                    </div>
+                
+                    <div id="formFieldsIcons">
+                  
+                        <div id="firstNameIcon" class="icon">
+                            <span><i class="fas fa-user"></i></span>
+                        </div>
+                    
+                        <div id="lastNameIcon" class="icon">
+                            <span><i class="fas fa-user"></i></span>
+                        </div>
+                    
+                        <div id="emailIcon" class="icon">
+                            <span><i class="fas fa-envelope"></i></span>
+                        </div>
+                    
+                        <div id="phoneIcon" class="icon">
+                            <span><i class="fas fa-phone"></i></span>
+                        </div>
+                        
+                        <div id="addressIcon" class="icon">
+                            <span><i class="fas fa-home"></i></span>
+                        </div>
+                        
+                        <div id="cityIcon" class="icon">
+                            <span><i class="fas fa-home"></i></span>
+                        </div>
+                        <div id="stateIcon" class="icon">
+                            <span><i class="fas fa-list-ul"></i></span>
+                        </div>
+                        <div id="zipcodeIcon" class="icon">
+                            <span><i class="fas fa-home"></i></span>
+                        </div>
+                        <div id="websiteIcon" class="icon">
+                            <span><i class="fas fa-globe-asia"></i></span>
+                        </div>
+                    
+                        <div id="projectIcon" class="icon">
+                            <span><i class="fas fa-pen"></i></span>
+                        </div>
+                    </div>
+                
+                    <div id="formFields">
+                
+                        <div id="firstName" class="inputFieldDiv">
+                            <input type="text" placeholder="First Name" name="firstName" class="inputField" required/>
+                        </div>
+                    
+                        <div id="lastName" class="inputFieldDiv">
+                            <input type="text" placeholder="Last Name" name="lastName" class="inputField" required/>
+                        </div>
+                    
+                        <div id="email" class="inputFieldDiv">
+                            <input type="email" placeholder="Email Address" name="email" class="inputField" required/>
+                        </div>
+                    
+                        <div id="phone" class="inputFieldDiv">
+                            <input type="number" placeholder="(845)555-1212" name="phone" class="inputField" required/>
+                        </div>
+                        <div id="address" class="inputFieldDiv">
+                            <input type="text" placeholder="Address" name="address" class="inputField" required/>
+                        </div>
+                        <div id="city" class="inputFieldDiv">
+                            <input type="text" placeholder="City" name="city" class="inputField" required/>
+                        </div>
+                        <div id="state" class="inputFieldDiv">
+                            <select id="state" class="inputField" required>
+                                <option>Please select your state</option>
+                                <option>Rajasthan</option>
+                                <option>Gujrat</option>
+                                <option>Maharashtra</option>
+                                <option>Haryana</option>
+                            </select>
+                        </div>
+                        <div id="zipcode" class="inputFieldDiv">
+                            <input type="number" placeholder="Zip Code" name="zipcode" class="inputField" required/>
+                        </div>
+                        <div id="website" class="inputFieldDiv">
+                            <input type="text" placeholder="Website or domain name" name="website" class="inputField" required/>
+                        </div>
+                    
+                        <div id="hosting" class="inputFieldDiv">
+                            <input type="radio" name="website" required/>Yes <br />
+                            <input type="radio" value="No" name="website" />No <br />
+                        </div>
+                    
+                        <div id="project" class="inputFieldDiv">
+                            <textarea placeholder="Project description" name="project" required></textarea>
+                        </div>
+                    </div>
+                          
+                </div>
+                <div>
+                    <button id="send">Send<span id="sendIcon"><i class="fas fa-paper-plane"></i></span></button>
+                </div>
+            </form>   
+        </div>
+    </body>
+</html>
