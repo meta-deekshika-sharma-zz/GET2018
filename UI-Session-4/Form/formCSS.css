@@ -68,11 +68,11 @@ label {
     flex-direction: column;
 }
 
-.inputFieldDiv {
+.input-field-div {
     height: 40px;
 }
 
-.inputField {
+.input-field {
     height: 25px;
     width: 200px;
 }
