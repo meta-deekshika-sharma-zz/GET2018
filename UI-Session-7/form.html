@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Form</title>
+        
+        <link rel="stylesheet" href="formCSS.css"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+        <script src="form-js.js"></script>
+    </head>
+    
+    <body>
+        <header>
+            <h1>Contact Us Today!</h1>
+        </header>
+        
+        <form action="details.html" id="contactForm" name="contactForm">
+            <div class="form-element">
+                <div id="firstNameLabel" class="label">
+                    <label><strong>First Name<span>*</span></strong></label>
+                </div>
+                <div id="firstNameIcon" class="icon">
+                    <span><i class="fas fa-user"></i></span>
+                </div>
+                <div id="firstName" class="input-field-div">
+                    <input type="text" placeholder="First Name" id="firstNameValue" class="input-field" required onblur="firstNameValidate(this)">
+                    <p id="fnameErr"></p>
+                </div>
+            </div>
+            
+            <div class="form-element">
+                <div id="lastNameLabel" class="label">
+                    <label><strong>Last Name</strong></label>
+                </div>
+                <div id="lastNameIcon" class="icon">
+                    <span><i class="fas fa-user"></i></span>
+                </div>
+                <div id="lastName" class="input-field-div">
+                    <input type="text" placeholder="Last Name" id="lastNameValue" class="input-field" onblur="lastNameValidate(this)">
+                    <p id="lnameErr"></p>
+                </div>
+            </div>
+            
+            <div class="form-element">
+                <div id="emailLabel" class="label">
+                    <label><strong>Email<span>*</span></strong></label>
+                </div>
+                <div id="emailIcon" class="icon">
+                    <span><i class="fas fa-envelope"></i></span>
+                </div>
+                <div id="email" class="input-field-div">
+                    <input type="text" placeholder="Email" id="emailValue" class="input-field" required onblur="emailValidate(this)">
+                    <p id="emailErr"></p>
+                </div>
+            </div>
+            
+            <div class="form-element">
+                <div id="phoneLabel" class="label">
+                    <label><strong>Phone#<span>*</span></strong></label>
+                </div>
+                <div id="phoneIcon" class="icon">
+                    <span><i class="fas fa-phone"></i></span>
+                </div>
+                <div id="phone" class="input-field-div">
+                    <input type="text" placeholder="(845)555-1212" min="3"  maxlength="10" id="phoneValue" class="input-field" required onblur="phoneValidate(this)">
+                    <p id="phoneErr"></p>
+                </div>
+            </div>
+            
+            <div class="form-element">
+                <div id="addressLabel" class="label">
+                    <label><strong>Address</strong></label>
+                </div>
+                <div id="addressIcon" class="icon">
+                    <span><i class="fas fa-home"></i></span>
+                </div>
+                <div id="address" class="input-field-div">
+                    <input type="text" placeholder="Address" id="addressValue" class="input-field">
+                </div>
+            </div>
+            
+            <div class="form-element">
+                <div id="cityLabel" class="label">
+                    <label><strong>City</strong></label>
+                </div>
+                <div id="cityIcon" class="icon">
+                    <span><i class="fas fa-home"></i></span>
+                </div>
+                <div id="city" class="input-field-div">
+                    <input type="text" placeholder="City" id="cityValue" class="input-field">
+                </div>
+            </div>
+            
+            <div class="form-element">
+                <div id="stateLabel" class="label">
+                    <label><strong>State<span>*</span></strong></label>
+                </div>
+                <div id="stateIcon" class="icon">
+                    <span><i class="fas fa-list-ul"></i></span>
+                </div>
+                <div id="state" class="input-field-div">
+                    <select id="stateSelect" class="input-field" required onchange="stateChange()">
+                        <option selected hidden value="">Please select your state</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Haryana">Haryana</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div>
+                <button id="send" onclick="return submitForm()">Send<span id="sendIcon"><i class="fas fa-paper-plane"></i></span></button>
+            </div>
+        </form>
+    </body>
+</html>
