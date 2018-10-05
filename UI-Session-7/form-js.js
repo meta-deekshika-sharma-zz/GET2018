@@ -9,10 +9,10 @@ var zipcodeValid = false;
 		
 function firstNameValidate(firstName)
 {
-	var error = document.getElementById('fnameErr');
-	var errorMsg = isNameValid(firstName.value);
-	if(errorMsg != "")
-        {
+    var error = document.getElementById('fnameErr');
+    var errorMsg = isNameValid(firstName.value);
+    if(errorMsg != "")
+    {
                 firstName.style.border = "solid thin red";
 		firstNameValid = false;
 		errorMap.set("First Name", errorMsg);
@@ -31,11 +31,11 @@ function firstNameValidate(firstName)
 
 function lastNameValidate(lastName)
 {
-	var error = document.getElementById('lnameErr');
-	var errorMsg = isNameValid(lastName.value);
+    var error = document.getElementById('lnameErr');
+    var errorMsg = isNameValid(lastName.value);
     if(errorMsg != "")
     {
-        lastName.style.border = "solid thin red";
+                lastName.style.border = "solid thin red";
 		lastNameValid = false;
 		errorMap.set("Last Name", errorMsg);
 		error.innerHTML = errorMsg;
@@ -53,11 +53,11 @@ function lastNameValidate(lastName)
 
 function emailValidate(email)
 {
-	var error = document.getElementById('emailErr');
-	var errorMsg = isEmailValid(email.value);
+    var error = document.getElementById('emailErr');
+    var errorMsg = isEmailValid(email.value);
     if(errorMsg != "")
     {
-        email.style.border = "solid thin red";
+                email.style.border = "solid thin red";
 		emailValid = false;
 		errorMap.set("Email", errorMsg);
 		error.innerHTML = errorMsg;
@@ -75,31 +75,31 @@ function emailValidate(email)
 
 function phoneValidate(phone)
 {
-	var error = document.getElementById('phoneErr');
-    if(isNaN(phone.value))
-    {
+        var error = document.getElementById('phoneErr');
+        if(isNaN(phone.value))
+        {
 		errorMsg = "Only numbers will be present";
 		errorMap.set("Phone", errorMsg);
-        phone.style.borderColor = "solid thin red";
+                phone.style.borderColor = "solid thin red";
 		error.innerHTML = errorMsg;
 		phoneValid = false;
-        return false;
-    }
+                return false;
+        }
 	else if(phone.value.length != 10) {
 		errorMsg = "Number should contains 10 charater";
 		errorMap.set("Phone", errorMsg);
-        phone.style.borderColor = "solid thin red";
+                phone.style.borderColor = "solid thin red";
 		error.innerHTML = errorMsg;
 		phoneValid = false;
-        return false;
+                return false;
 	}
-    else{
+        else{
 		if(errorMap.has("Phone"))
 			errorMap.delete("Phone");
-        phone.style.borderColor = "";
+                phone.style.borderColor = "";
 		error.innerHTML = "";
 		phoneValid = true;
-        return true;
+                return true;
     }
 }
 
@@ -148,7 +148,7 @@ function stateChange()
 	var countChildren = document.getElementById("contactForm").children.length;
 	var stateRef = document.getElementById("stateSelect");
 	
-    var referenceNode = stateRef.parentNode.parentNode;	
+        var referenceNode = stateRef.parentNode.parentNode;	
 		
 	var zipcode = document.createElement("div");
 	zipcode.className = "form-element";
@@ -158,11 +158,11 @@ function stateChange()
 	website.className = "form-element";
 	website.innerHTML = "<div id='websiteLabel' class='label'><label><strong>Website or domain name</strong></label></div><div id='websiteIcon' class='icon'><span><i class='fas fa-globe'></i></span></div><div id='website' class='input-field-div'><input type='text' placeholder='Website or domain name' id='websiteValue' class='input-field'></div>";
 					
-    var hosting = document.createElement("div");
+        var hosting = document.createElement("div");
 	hosting.className = "form-element";
 	hosting.innerHTML = "<div id='hostingLabel' class='label'><label><strong>Do you have hosting?</strong></label></div><div id='hosting' class='input-field-div'><input type='radio' name='hosting' id='yes_hosting'/>Yes <br /><input type='radio' value='No' name='hosting' id='no_hosting'/>No <br /></div>";
 					
-    var project = document.createElement("div");
+        var project = document.createElement("div");
 	project.className = "form-element";
 	project.innerHTML = "<div id='projectLabel' class='label'><label><strong>Project Description</strong></label></div><div id='projectIcon' class='icon'><span><i class='fas fa-pencil-alt'></i></span></div><div id='project' class='input-field-div'><textarea type='text' placeholder='Project Description' id='projectValue' class='input-field'></textarea></div>";
 			
@@ -194,29 +194,29 @@ function stateChange()
 function zipcodeValidate(zipcode) {
 	var error = document.getElementById("zipErr");
 	if(isNaN(zipcode.value))
-    {
+        {
 		var errorMsg = "Only numbers will be present";
-        zipcode.style.borderColor = "solid thin red";
+                zipcode.style.borderColor = "solid thin red";
 		error.innerHTML = errorMsg;
 		errorMap.set("Zip", errorMsg);
 		zipcodeValid = false;
-        return false;
-    }
+                return false;
+       }
 	else if(zipcode.value.length != 6) {
 		var errorMsg = "6 charater should be present";
 		errorMap.set("Zip", errorMsg);
-        phone.style.borderColor = "solid thin red";
+                phone.style.borderColor = "solid thin red";
 		error.innerHTML = errorMsg;
 		zipcodeValid = false;
-        return false;
+                return false;
 	}
-    else{
+        else{
 		if(errorMap.has("Zip"))
 			delete("Zip");
-        zipcode.style.borderColor = "";
+                 zipcode.style.borderColor = "";
 		error.innerHTML = "";
 		zipcodeValid = true;
-        return true;
+                return true;
     }
 }
 
@@ -229,9 +229,9 @@ function submitForm()
 	var state = document.getElementById("stateSelect");
 	
 	localStorage.clear();
-    localStorage.setItem("First Name", firstName.value);
-    localStorage.setItem("Email", email.value);
-    localStorage.setItem("Phone #", contactNumber.value);
+        localStorage.setItem("First Name", firstName.value);
+        localStorage.setItem("Email", email.value);
+        localStorage.setItem("Phone #", contactNumber.value);
 	
 	var lastName = document.getElementById("lastName");
     if(lastName.value != "") {
