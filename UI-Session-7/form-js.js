@@ -11,9 +11,9 @@ function firstNameValidate(firstName)
 {
 	var error = document.getElementById('fnameErr');
 	var errorMsg = isNameValid(firstName.value);
-    if(errorMsg != "")
-    {
-        firstName.style.border = "solid thin red";
+	if(errorMsg != "")
+        {
+                firstName.style.border = "solid thin red";
 		firstNameValid = false;
 		errorMap.set("First Name", errorMsg);
 		error.innerHTML = errorMsg;
@@ -164,7 +164,7 @@ function stateChange()
 					
     var project = document.createElement("div");
 	project.className = "form-element";
-	project.innerHTML = "<div id='projectLabel' class='label'><label><strong>Project Description<span>*</span></strong></label></div><div id='projectIcon' class='icon'><span><i class='fas fa-pencil-alt'></i></span></div><div id='project' class='input-field-div'><textArea type='text' placeholder='Project Description' id='projectValue' required class='input-field'></textArea></div>";
+	project.innerHTML = "<div id='projectLabel' class='label'><label><strong>Project Description</strong></label></div><div id='projectIcon' class='icon'><span><i class='fas fa-pencil-alt'></i></span></div><div id='project' class='input-field-div'><textarea type='text' placeholder='Project Description' id='projectValue' class='input-field'></textarea></div>";
 			
 	if(countChildren == 10) {
         var parentForm = document.getElementById("contactForm");
@@ -222,6 +222,7 @@ function zipcodeValidate(zipcode) {
 
 function submitForm()
 {
+	debugger;
 	var firstName = document.getElementById("firstNameValue");
 	var contactNumber = document.getElementById("phoneValue");
 	var email = document.getElementById("emailValue");
@@ -249,50 +250,46 @@ function submitForm()
     
     localStorage.setItem("State", state.value);
     if(state.value == "Rajasthan") {
-        alert("Raj");
         var project_description = document.getElementById("projectValue");
-            
-        if (project_description.value != ""){
+		if(project_description.value != "") {
             localStorage.setItem("Project Description", project_description.value);
         }
             
         var website = document.getElementById("websiteValue");
-        alert(website);
         if(website.value != "") {
             localStorage.setItem("Website or domain name", website.value);
         }
     }
     else if(state.value == "Haryana") {
         var zipcode = document.getElementById("zipcodeValue");
-        if (zipcode.value != ""){
-            localStorage.setItem("Zip Code",  zipcode.value);
-        }
+        localStorage.setItem("Zip Code",  zipcode.value);
             
         var yesHosting = document.getElementById("yes_hosting");
         var noHosting = document.getElementById("no_hosting");
             
         if(yesHosting.checked) {
-            alert("yes");
             localStorage.setItem("Has Hosting", yesHosting.value);
         }
         else if(noHosting.checked) {
-            alert("No");
             localStorage.setItem("Has Hosting", noHosting.value);
         }
     }
-    else if(state.value == "Maharastra") {
+    else if(state.value == "Maharashtra") {
         var zipcode = document.getElementById("zipcodeValue");
-        if (zipcode.value != ""){
-            localStorage.setItem("Zip Code",  zipcode.value);
-        }
+        localStorage.setItem("Zip Code",  zipcode.value);
             
-        var project_description = document.getElementById("project_description");
-        if (project_description.value != ""){
+        var project_description = document.getElementById("projectValue");
+        if(project_description.value != "") {
             localStorage.setItem("Project Description", project_description.value);
         }
     }
 	
-	if(firstNameValid & lastNameValid & emailValid & phoneValid & zipcodeValid) {
+	if(firstNameValid & lastNameValid & emailValid & phoneValid) {
+		if(state.value == "Haryana" || state.value == "Maharashtra")
+		{
+			if(!zipcodeValid)
+				return false;
+		}
 		document.contactForm.submit();
 		return true;
     }
