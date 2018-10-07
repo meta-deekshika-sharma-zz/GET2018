@@ -1,12 +1,12 @@
 //This function defines the node of stack using linked list
 function Node(data) {
-    this.data = data;
-    this.link = null;
+	this.data = data;
+	this.link = null;
 }
 
 //This function defines a stack object
 function Stack() {
-    this.top = null;
+	this.top = null;
 }
 
 //This function returns the peek value
@@ -21,34 +21,35 @@ Stack.prototype.isEmpty = function() {
 
 //This function push the data in stack 
 Stack.prototype.push = function(value) {
-    var node = new Node(value);
- 
-    if (this.top != null) {
-         node.link = this.top;
-    }
+	var node = new Node(value);
+	
+	if (this.top != null) {
+		node.link = this.top;
+	}
 	this.top = node;
 };
 
 //This function will print the data in stack
 Stack.prototype.printList = function() {
 	var currentNode = this.top; 
-    var str = ""; 
-    while (currentNode) { 
-        str += currentNode.data + " "; 
-        currentNode = currentNode.link; 
-    } 
-    console.log(str);
+	var str = ""; 
+	
+	while (currentNode) {
+		str += currentNode.data + " "; 
+		currentNode = currentNode.link;
+	} 
+	console.log(str);
 }
 
 //This function will remove the data from stack
 Stack.prototype.pop = function() {
-    var currentNode = this.top,
-    message = {failure: 'Failure: Underflow exception'},
-    deleteNode = null;
+	var currentNode = this.top,
+	    message = {failure: 'Failure: Underflow exception'},
+	    deleteNode = null;
  
-    if (this.isEmpty()) {
-        throw new Error(message.failure);
-    } else {
+	if (this.isEmpty()) {
+		throw new Error(message.failure);
+	} else {
 		deleteNode = this.top;
 		this.top = deleteNode.link;
 		deleteNode.link = null;
