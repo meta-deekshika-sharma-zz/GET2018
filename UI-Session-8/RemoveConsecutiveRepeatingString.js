@@ -1,19 +1,19 @@
 function removeConsecutiveRepeatingString(inputString) {
-	
-	var index;
-	var newString = inputString;
-	
-	var initialIndex, finalIndex = 0;
-	for(index = 0; index < newString.length-1; index++) {
-		initialIndex = index;
-		while (newString.charAt(index) == newString.charAt(index+1)) {
-			console.log(index);
-			finalIndex = index+1;
-			index++;
-		}
-	    newString = newString.substring(0, initialIndex) + newString.substring(finalIndex+1, inputString.length-1);
-	}	
-	console.log(newString);
+   var i = 0;
+   
+   while(i < inputString.length - 1) {
+       var n = 0;
+       var j = i;
+       while(inputString.charAt(j) == inputString.charAt(j + 1)) {
+           n++;
+           j++;
+       }
+       if(n > 0) {
+           inputString = inputString.substring(0, i) + inputString.substring(i + n + 1, inputString.length);
+           console.log(inputString);
+           i = i - n - 1;
+       }
+       i++;
+   }
+   return inputString;
 }
-
-removeConsecutiveRepeatingString("eeabcddcbfgf");
