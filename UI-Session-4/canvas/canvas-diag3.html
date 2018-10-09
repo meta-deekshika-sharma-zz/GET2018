@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Canvas Circle</title>
+    </head>
+    
+    <body>
+        <canvas id="circleCanvas" width="150" height="150"></canvas>
+        
+         <script>
+            var canvas = document.getElementById("circleCanvas");
+            var ctx = canvas.getContext("2d");
+        
+            ctx.beginPath();
+            ctx.arc(100, 100, 45, 0, 2 * Math.PI, false);
+            ctx.strokeStyle ="#ba489b";
+            ctx.lineWidth = 10;
+            ctx.stroke();
+ 
+        </script>
+    </body>
+</html>

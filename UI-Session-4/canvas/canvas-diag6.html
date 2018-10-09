@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Canvas Rectangle</title>
+    </head>
+    
+    <body>
+        <canvas id="rectangleCanvas" width="150" height="150"></canvas>
+        
+         <script>
+            var canvas = document.getElementById("rectangleCanvas");
+            var ctx = canvas.getContext("2d");
+    
+            ctx.beginPath();
+            ctx.rect(80, 80, 150, 150);
+            ctx.fillStyle = "green";
+            ctx.fill();
+        </script>
+    </body>
+</html>

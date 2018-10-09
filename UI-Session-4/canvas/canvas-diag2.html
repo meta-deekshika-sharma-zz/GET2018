@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Canvas half Circle</title>
+    </head>
+    
+    <body>
+        <canvas id="circleCanvas" width="150" height="150"></canvas>
+        
+         <script>
+            var canvas = document.getElementById("circleCanvas");
+            var ctx = canvas.getContext("2d");
+            
+            ctx.beginPath();
+            ctx.arc(90, 90, 50, 3 * Math.PI/2, Math.PI/2, true);
+            ctx.fillStyle = "#679ff7";
+            ctx.fill();
+            
+             ctx.beginPath();
+            ctx.arc(90, 90, 47, 3 * Math.PI/2, Math.PI/2, false);
+            ctx.strokeStyle ="#babdc1";
+             ctx.lineWidth = 6;
+            ctx.stroke();
+ 
+        </script>
+    </body>
+</html>
