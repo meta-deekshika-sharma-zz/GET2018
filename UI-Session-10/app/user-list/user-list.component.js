@@ -1,3 +1,6 @@
+//This component part applied the functionality on the templet
+//It have function to show user date, add user and edit user details
+
 angular.
   module('userList').
   component('userList', {
@@ -5,21 +8,18 @@ angular.
     controller: ['$http', '$scope', function UserListController($http, $scope) {
       var self = this;
         
-      self.user = {
+      function createUserRef() {
+          self.user = {
           picture: "images//male-user-shadow_318-34042.jpg",
           name: null,
           phone: null,
           address: null
-        } 
+        }   
+      }
         
+      createUserRef();
       $scope.createUser = function() {
         $scope.header = "Add";
-        self.user = {
-          picture: "images//male-user-shadow_318-34042.jpg",
-          name: null,
-          phone: null,
-          address: null
-        }  
       }
       
       $scope.editUser = function(userIndex) {
@@ -43,12 +43,7 @@ angular.
           else if(self.user.name != null && self.user.phone != null && self.user.address != null)
                 self.users.push(self.user);
           
-          self.user = {
-          picture: "images//male-user-shadow_318-34042.jpg",
-          name: null,
-          phone: null,
-          address: null
-        }  
+          createUserRef(); 
       }
        
       $scope.searchUser = function() {
