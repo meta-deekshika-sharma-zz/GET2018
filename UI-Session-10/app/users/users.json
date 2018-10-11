@@ -1,0 +1,58 @@
+[
+ {
+   "picture": "images//male-user-shadow_318-34042.jpg",
+   "name": "Becker Rocha",
+   "gender": "male",
+   "email": "beckerrocha@xplor.com",
+   "phone": "+1 (831) 415-3965",
+   "address": "California"
+ },
+ {
+   "picture": "images//male-user-shadow_318-34042.jpg",
+   "name": "Helen Cooley",
+   "gender": "female",
+   "email": "helencooley@xplor.com",
+   "phone": "+1 (986) 411-3208",
+   "address": "Utah"
+ },
+ {
+   "picture": "images//male-user-shadow_318-34042.jpg",
+   "name": "Mitzi Little",
+   "gender": "female",
+   "email": "mitzilittle@xplor.com",
+   "phone": "+1 (998) 441-2084",
+   "address": "Vermont"
+ },
+ {
+   "picture": "images//male-user-shadow_318-34042.jpg",
+   "name": "Mclean Deleon",
+   "gender": "male",
+   "email": "mcleandeleon@xplor.com",
+   "phone": "+1 (880) 483-3981",
+   "address": "Wyoming"
+ },
+ {
+   "picture": "images//male-user-shadow_318-34042.jpg",
+   "name": "Delgado Macdonald",
+   "gender": "male",
+   "email": "delgadomacdonald@xplor.com",
+   "phone": "+1 (818) 440-3594",
+   "address": "Hawaii"
+ },
+ {
+   "picture": "images//male-user-shadow_318-34042.jpg",
+   "name": "Key Mills",
+   "gender": "male",
+   "email": "keymills@xplor.com",
+   "phone": "+1 (874) 591-3592",
+   "address": "Nevada"
+ },
+ {
+   "picture": "images//male-user-shadow_318-34042.jpg",
+   "name": "Everett Allison",
+   "gender": "male",
+   "email": "everettallison@xplor.com",
+   "phone": "+1 (806) 450-2390",
+   "address": "Maryland"
+ }
+]

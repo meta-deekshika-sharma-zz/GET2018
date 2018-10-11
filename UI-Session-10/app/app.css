@@ -1,0 +1,40 @@
+header {
+    background-color: #9eeff7;
+    padding: 5px;
+    border: 1px solid gray;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    border: 4px solid gainsboro;
+}
+
+strong {
+    font-size: 25px;
+}
+
+.modal-header {
+   background-color: #9eeff7; 
+   border: 1px solid gray;
+}
+
+.search {
+    border-radius: 9px;
+    height: 40px;
+}
+
+.searchBtn {
+    border-radius: 3px;
+    height: 30px;
+}
+
+ul {
+    width: 100%;
+}
+
+img {
+    height: 100px;
+}
