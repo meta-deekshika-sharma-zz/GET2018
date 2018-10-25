@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <aside class="col-4">
+            <div class="list-group">
+                <button class="list-group-item list-group-item-action active" ng-click="SearchList=all" data-toggle="list" role="tab">All Categories</button>
+                <button class="list-group-item list-group-item-action" ng-click="SearchList={category: 'Bread'}" data-toggle="list" role="tab">Bread</button>
+                <button class="list-group-item list-group-item-action" ng-click="SearchList={category: 'Dairy'}" data-toggle="list" role="tab">Dairy</button>
+                <button class="list-group-item list-group-item-action" ng-click="SearchList={category: 'Fruits'}" data-toggle="list" role="tab">Fruits</button>
+                <button class="list-group-item list-group-item-action" ng-click="SearchList={category: 'Seasonings and Spices'}" data-toggle="list" role="tab">Seasonings and Spices</button>
+                <button class="list-group-item list-group-item-action" ng-click="SearchList={category: 'Vegetables'}" data-toggle="list" role="tab">Vegetables</button>
+            </div>
+        </aside>
+        
+        <div class="col-8">
+            <ul class="d-flex flex-wrap list-unstyled">
+                <li ng-repeat="product in $ctrl.products | filter:SearchList" class="col-lg-6 md-12 p-2">
+                    <div class="card">
+                        <div class="card-body border-dark">
+                            <img ng-src="{{product.imageUrl}}" alt="{{product.title}}" style="height: 200px; width: 100%">
+                            <h2>{{product.title}}</h2>
+                            <p>&#36 {{product.price}}</p>
+                            <button class="btn btn-secondary" style="width: 100%" ng-click="addToCart(product)">Add to cart</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

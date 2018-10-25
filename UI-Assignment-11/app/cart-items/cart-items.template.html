@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Shopping Cart</h1>
+    
+    <div class="cart">
+        <div class="cart-body">
+            <div class="row px-2">
+                <p class="col-9">You have items in cart</p>
+                <button type="button" class="btn btn-light col-3 p-2">Clear Shopping Cart</button>
+            </div>
+            
+            <table class="table">
+                <thead>
+                    <th scope="col"></th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                </thead>
+                
+                <tbody>
+                    <tr ng-repeat="product in $ctrl.cart">
+                        <td><img class="rounded-circle" ng-src="{{product.imageUrl}}" alt="{{product.title}}" width="50" height="50"></td>
+                        <td>{{product.title}}</td>
+                        <td></td>
+                        <td>&#36 {{product.price}}</td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="3"></td>
+                        <td>Total Price</td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="btn btn-primary">Check Out</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
